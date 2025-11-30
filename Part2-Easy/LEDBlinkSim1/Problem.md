@@ -1,51 +1,48 @@
-# Problem: Forward and Backward LED Blink Sequence
+# Problem: Opposite-Pair LED Lighting Sequence
 
-* **Recommended Time:** 15–20 min  
-* **Topics:** Arduino Basics, Digital Output, Arrays, Functions, Control Flow
+**Recommended Time:** 15–20 min  
+**Topics:** Digital Output, Timing, LED Control, Sequential Logic
 
 ## Description
-Write an Arduino program to control **6 LEDs** connected to digital pins. The program should implement a **forward and backward LED sequence**:
 
-* **Forward Sequence:** Turn on each LED **one at a time** from the first to the last, while turning all other LEDs off.  
-* **Backward Sequence:** Turn on each LED **one at a time** from the last to the first, while turning all other LEDs off.  
+Write an Arduino program that controls **8 LEDs** connected to digital pins.  
+Your task is to light the LEDs in **opposite pairs**, beginning from the outermost LEDs and moving inward.
 
-Each LED should remain **ON for 1 second** before moving to the next LED in the sequence. After completing the forward and backward sequences, the program should repeat indefinitely.  
+The required ON sequence is:
 
-Use separate functions `forwardSeq()` and `backwardSeq()` to implement the sequences. Optionally, print messages to the Serial Monitor to indicate which LED is ON.
+1. Turn ON LEDs **1 and 8**, then wait **1 second**  
+2. Turn ON LEDs **2 and 7**, then wait **1 second**  
+3. Turn ON LEDs **3 and 6**, then wait **1 second**  
+4. Turn ON LEDs **4 and 5**, then wait **1 second**
 
-**Constraints:**
-* Only standard Arduino functions such as `digitalWrite()`, `pinMode()`, `delay()`, and `Serial.print()` may be used.  
-* Use arrays to manage LED pins.  
-* Ensure only **one LED is ON at a time**.  
-* The sequence repeats indefinitely.
+After all pairs have been turned on, turn them **OFF** in the opposite pairing order:
+
+5. Turn OFF LEDs **4 and 5**, then wait **1 second**
+6. Turn OFF LEDs **3 and 6**, then wait **1 second**  
+6. Turn OFF LEDs **2 and 7**, then wait **1 second**  
+7. Turn OFF LEDs **1 and 8**, then wait **1 second** 
+
+Once complete, the full sequence must **repeat indefinitely**.
+
+Your program must print the ON/OFF state of each LED to the Serial Monitor as the sequence runs.
 
 ## Input / Output
-* **Input:** None (program runs automatically)  
-* **Output:** LEDs turn on one at a time in forward and backward sequences; optionally, print the LED number to the Serial Monitor.
 
----
+**Input:**  
+- No user input is required.
 
-## Example
+**Output:**  
+- LEDs physically turn ON/OFF following the pair sequence.  
+- Serial Monitor prints messages such as:  
+  - `"LED #1 is On."`  
+  - `"LED #8 is Off."`  
 
-**Behavior:**
-1. Forward sequence: LED 1 → LED 2 → LED 3 → LED 4 → LED 5 → LED 6, each for 1 second.  
-2. Backward sequence: LED 6 → LED 5 → LED 4 → LED 3 → LED 2 → LED 1, each for 1 second.  
-3. Repeat indefinitely.  
+## Example Behavior
 
-**Serial Monitor Output (optional):**
+The LED pattern should appear to “move inward” as pairs turn ON: (1,8) → (2,7) → (3,6) → (4,5)
+Then “move outward” as pairs turn OFF: (1,8) → (2,7) → (3,6) → (4,5)
+With a **1-second delay** between all transitions.
 
-LED 1 is ON.
-LED 2 is ON.
-LED 3 is ON.
-...
-LED 6 is ON.
+# Template:
 
-LED 6 is ON.
-LED 5 is ON.
-LED 4 is ON.
-...
-LED 1 is ON.
-
-## Template
-
-**TinkerCAD Link:** https://www.tinkercad.com/things/7wXzC4COsmm-led-blink-sequence?sharecode=8d1VRmtBS1S3V9ZXccKaw01fvGO65AxMoaELec8TNvU
+**TinkerCAD Link**: 
