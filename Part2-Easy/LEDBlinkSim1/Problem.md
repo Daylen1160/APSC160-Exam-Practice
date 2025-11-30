@@ -45,4 +45,4 @@ With a **1-second delay** between all transitions.
 
 # Template:
 
-**TinkerCAD Link**: 
+**TinkerCAD Link**: https://www.tinkercad.com/things/4YEI4BSLE7D-led-blink-simulation-ii?sharecode=jt-emIk-G1mPrQdTtt8rkWRqdhkKCjbeEitk9DUErc0
