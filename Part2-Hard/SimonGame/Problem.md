@@ -7,7 +7,7 @@
 
 You are to implement the Simon game in C using the Arduino simulator. The following figure shows a sample implementation of the game:
 
-<img width="2260" height="859" alt="image" src="https://github.com/user-attachments/assets/a27decd0-c679-4ca2-922d-0307ef4f7b8c" />
+![CPT2511291902-557x313 (online-video-cutter com)](https://github.com/user-attachments/assets/98c7b8c5-fe68-4316-bedc-e5a15a08a344)
 
 When turned on, the LEDs from 0 to 3 are of the following colours: Green, Red, Yellow, and Blue, respectively. LED0 is associated with PushButton0, LED1 with PushButton1, and so forth.
 
