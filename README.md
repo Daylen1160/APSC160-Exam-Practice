@@ -4,7 +4,9 @@
 
 
 ## Overview
-Where are we? This is git, a software that is used by all programmers to store code. You are currently on Github, a platform that hosts git code (like how YouTube hosts videos; Git and Github are not the same thing). 
+Where are we? This is git, a software that is used by programmers to store code. You are currently on Github, the most commonly used platform that hosts code (like how YouTube hosts videos; Git and Github are not the same thing). 
+
+You are currently looking at a repository (a folder with stuff in it). The only important ones you need to look at is what you are seeing right now, `README.md`, `tips.md`, `C Programming`, and `Arduino Programming`. The names are self explanatory, but have a look around!
 
 This guide is meant to server you as an additional resource to studying for the APSC 160 Final. We **strongly** recommend to check out `tips.md` too for additional advice!
 
@@ -18,8 +20,11 @@ You will have a question file, `problem.md`, and 3 C files:
 
 ### For Arduino Questions
 
-- [INSERT INSTRUCTIONS HERE]
-## How to Use This Repository
+You will also have a question file, `problem.md`. At the bottom, there will be a link to open the file and create a copy on TinkerCAD. 
+- `solution.c` Do not change anything here. Answers are here.
+
+
+## How to Access This Repository
 
 <ins> For the C questions, There are two different ways: </ins>
 
@@ -31,14 +36,22 @@ Copy and paste the template and solution files into onlineGDB. Make sure to use 
 
 > Note: Only Windows (10/11) OS does not have Git pre-installed
 
-For those who want to use their own IDE (VSCode, VS, Codeblocks, etc), click *Code* and *Copy the HTTPS link*. Navigate to your directory of choice. Then in *Terminal* or *Command Prompt*. Clone the repository using the following:
+> I would recommend doing this if you are interested in CPEN, ELEC, or BMEG as you will inevitably be using Git in the future for classes!
+
+For those who want to use their own IDE (VSCode, VS, Codeblocks, etc), click *Code* and *Copy the HTTPS link*. Navigate to your directory of choice. Then in *Terminal* or *Command Prompt*.   Clone the repository using the following:
 ``` bash
-git clone [https://github.com/Daylen1160/APSC160-FinalPractice-2025.git]
+git clone [THE LINK YOU JUST COPIED]
 ```
 
 Now open the folder in your IDE and run from there!
 
-> [INSERT SOME DISCLAIMER IF WE UPDATE THE REPO - DAYLEN WILL DO]
+<br> </br>
+#### What happens if changes are made by us (and hopefully announced on Piazza)?
+
+Open your terminal in the `APSC-160-Practice` folder and run:
+``` bash
+git pull origin main
+```
 ---
 <ins> For Arduino questions: </ins>  
 
