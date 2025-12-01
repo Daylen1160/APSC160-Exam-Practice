@@ -8,7 +8,7 @@ Where are we? This is git, a software that is used by programmers to store code.
 
 You are currently looking at a repository (a folder with stuff in it). The only important ones you need to look at is what you are seeing right now, `README.md`, `tips.md`, `C Programming`, and `Arduino Programming`. The names are self explanatory, but have a look around!
 
-This guide is meant to serve as an additional resource to studying for the APSC 160 Final. We **strongly** recommend to check out `tips.md` too for additional advice!
+This guide is meant to serve as an additional resource to studying for the APSC 160 Final. Preferably, work your way up the problems, from 'Warm Up/Easy' to 'Medium' and then 'Hard'. We also **strongly** recommend to check out `tips.md` too for additional advice! 
 
 ### For C Questions
 
