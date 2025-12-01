@@ -8,7 +8,7 @@ Where are we? This is git, a software that is used by programmers to store code.
 
 You are currently looking at a repository (a folder with stuff in it). The only important ones you need to look at is what you are seeing right now, `README.md`, `tips.md`, `C Programming`, and `Arduino Programming`. The names are self explanatory, but have a look around!
 
-This guide is meant to server you as an additional resource to studying for the APSC 160 Final. We **strongly** recommend to check out `tips.md` too for additional advice!
+This guide is meant to serve as an additional resource to studying for the APSC 160 Final. We **strongly** recommend to check out `tips.md` too for additional advice!
 
 ### For C Questions
 
@@ -65,12 +65,12 @@ In the `problem.md` file, there is a template to TinkerCAD
     - Functions
     - Arrays
     - Strings
-    - Random
+    - Random Numbers
 - **Arduino Programming**
     - Digital I/O
     - Analog I/O
     - 7-Segment Display  
-    - Random
+    - Random Numbers
     - Timing
     - Advanced Timing  
 
@@ -82,7 +82,7 @@ In the `problem.md` file, there is a template to TinkerCAD
 | Name | Year | Major | Email |
 |:---:|:---:|:---:|:---:|
 | Daylen Chun | 2nd | Computer Engineering | dchun924@student.ubc.ca |
-| Aly Khan | 4th | Biomedical Engineering | alykhan5@student.ubc.ca |
+| Aly Khan Nuruddin | 4th | Biomedical Engineering | alykhan5@student.ubc.ca |
 
 
 
@@ -94,4 +94,5 @@ If you find any mistakes/problems/suggestions in `Arduino Programming`, email al
 
 If you want additional tips/insights or anything else, email either/both of us!
 
+Best of luck on the final! :D
 ---
