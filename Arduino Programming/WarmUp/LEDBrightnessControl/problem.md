@@ -26,12 +26,12 @@ Helper functions such as `increaseBrightness()` and `decreaseBrightness()` are o
   - One LED connected to a PWM-capable pin  
 * The brightness changes **one step at a time** per loop iteration
 
+**Disclaimer:**
+* PWM and `analogWrite()` are not covered in this iteration of APSC160 and therefore, not required material for the final exam. Please utilize these constructs at your own discretion.
+
 ## Input / Output
 * **Input:** Pushbutton states (pressed or not pressed).  
 * **Output:** LED brightness level (0–255), controlled via PWM.
-
-**Disclaimer:**
-* PWM and analogWrite() are not covered in this iteration of APSC160 and therefore, not required material for the final exam. Please utilize these constructs at your own discretion.
 ---
 
 ## Examples
