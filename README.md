@@ -4,9 +4,9 @@
 
 
 ## Overview
-Where are we? This is git, a software that is used by programmers to store code. You are currently on Github, the most commonly used platform that hosts code (like how YouTube hosts videos; Git and Github are not the same thing). 
+What's going on? This was made with Git, a software that is used by programmers to store code. You are currently on Github, the most commonly used platform that hosts code (like how YouTube hosts videos; Git and Github are not the same thing). You are currently looking at a repository (a folder with stuff in it).
 
-You are currently looking at a repository (a folder with stuff in it). The only important ones you need to look at is what you are seeing right now, `README.md`, `tips.md`, `C Programming`, and `Arduino Programming`. The names are self explanatory, but have a look around!
+**In a nutshell, The only important things you need to look at is `README.md` (what you're looking at now), `tips.md`, `C Programming`, and `Arduino Programming`.** The names are self explanatory, so have a look around!
 
 This guide is meant to server you as an additional resource to studying for the APSC 160 Final. We **strongly** recommend to check out `tips.md` too for additional advice!
 
@@ -21,7 +21,7 @@ You will have a question file, `problem.md`, and 3 C files:
 ### For Arduino Questions
 
 You will also have a question file, `problem.md`. At the bottom, there will be a link to open the file and create a copy on TinkerCAD. 
-- `solution.c` Do not change anything here. Answers are here.
+- `solution.c` Do not change anything here. Answers are here. There's obviously no autograder since it's in TinkerCAD, you need to determine if your solution functions as expected as in the instructions.
 
 
 ## How to Access This Repository
