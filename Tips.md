@@ -1,9 +1,7 @@
 # 💡 Success Guide & Additional Tips
 
 ## 📋 Quick Note
-> A small note about Daylen: I took this course in 2025 like all of you. I made this to give you personal insights to me being in your shoes, and my friends alongside me who have complained to me about the course.
-
-> [ALY if you want to put any personal notes here you can otherwise delete]
+> A small note about Daylen: I took this course in 2025 like all of you. I made this to give you personal insights to me being in your shoes, and my friends alongside me who have complained to me about the course.  
 
 This study guide is designed to teach you how to **"think like a coder"**, not just test your knowledge of the course up to this point.  
 
@@ -42,13 +40,13 @@ Sometimes you cannot get a problem because you are not in the right space at tha
 ## 🛏️ Health
 
 - **Don't overwork:** I would never ever ever ever recommend doing every problem in this guide in one sitting. Think about doing it every day building up to the final, doing an hour in the morning, hour in the afternoon, and hour at night. Consistency puts it in long term memory and it becomes more natural. Cramming puts it in short term memory and you become overly stressed. 
-- **Sleep early:** Don't be working at 6am like us making this guide. You will always think better with good sleep. 
+- **Sleep early:** Don't be working at unholy hours. You will always think better with good sleep. 
 - **Eat right:** Fuel your brain with the right thing, it won't operate at your highest level otherwise. 
 - **Don't overthink it:** You are taking this exam either way, so just do your best in prepping. 
 
 ## 🗣 Last Encouraging Words
 
 - Although you and someone else might have gotten the same grade, they might've not studied at all whereas you dedicated countless, sleepless nights. Always compare yourself to only yourself, be better than who you were yesterday. 
-- You are more than just a grade in the gradebook, you are human. On the surface, the TAs and Instructors can only see this. But know, that we do care about what you feel underneath and that you are sentient beings who have your own achievements and struggles. 
-- You will do fine on this final. As TAs who has seen you guys struggle and still get back up, We recognize your efforts, we would never sell you guys short by giving you crappy problems. We want to see you succeed and enjoy programming, that's why we dedicated a lot of time to make this.
+- You are more than just a grade in the gradebook, you are human. On the surface, the TAs and Instructors can only see your mark. But know, that we do care about what you feel underneath and that you are sentient beings who have your own achievements and struggles. 
+- If you finish this guide, you will be fine on this final. As TAs who has seen you guys struggle and still get back up, We recognize your efforts, we would never sell you guys short by giving you crappy problems. We want to see you succeed and enjoy programming, that's why we dedicated a lot of time to make this.
 - Always feel free to reach out to either of us, we are with you.

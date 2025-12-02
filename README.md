@@ -60,6 +60,7 @@ In the `problem.md` file, there is a template to TinkerCAD
 
 - **C Programming**
     - Fundamentals
+    - User I/O [PROBLEMS HERE DO NOT COVER]
     - File I/O
     - Control
     - Functions
@@ -95,3 +96,7 @@ If you find any mistakes/problems/suggestions in `Arduino Programming`, email al
 If you want additional tips/insights or anything else, email either/both of us!
 
 ---
+
+### Future Updates <sub> (hopefully) </sub>
+- Make user I/O problems
+- Get random/string problems from Aly's guide working
