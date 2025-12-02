@@ -17,7 +17,7 @@ The program must implement the following functions:
 - `backwardSeq()`: Lights the LEDs from last to first.  
 - `lightSpeed()`: Reads the potentiometer value, maps it to a delay range, and delays accordingly.
 
-### Analog to PWM Mapping Formula
+### Analog to Potentiometer Mapping Formula
 
 To convert the potentiometer value (0–1023) to a delay in milliseconds:
 `delayTime = ((sensorValue / 1023.0) * 900) + 100`
