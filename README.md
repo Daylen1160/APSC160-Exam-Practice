@@ -14,7 +14,7 @@ This guide is meant to serve as an additional resource to studying for the APSC 
 You will have a question file, `problem.md`, and 3 C files:
 
 - `template.c` Write your code here.
-- `testing.c` Run this file. Change the `#include` at the top to run either `template.c` or `solution.c`, **do not change anything else**. If your program can get all the test cases here your solution is correct. 
+- `testing.c` Run this file. Change the `#include` at the top to run either your template or our solution, **do not change anything else**. If your program can get all the test cases here your solution is correct. 
 - `solution.c` Do not change anything here. Answers are here.
 
 ### For Arduino Questions
@@ -29,7 +29,7 @@ You will also have a question file, `problem.md`. At the bottom, there will be a
 
 ### 1. OnlineGDB
 
-Copy and paste the template and solution files into onlineGDB. Make sure to use the *new file* button to create 3 separate files (and more if it's a file I/O question). **Make sure to put `testing.c` in the main file.** You can do this copy and paste method on other IDE's too if you are too lazy to do it the Git way below.
+Copy and paste the template and solution files into onlineGDB. Make sure to use the *new file* button to create 3 separate files (and more if it's a file I/O question). **Make sure to put `testing.c` in the main file.** You can do this copy and paste method on other IDE's too if you are too lazy to do it the Git way below. **You will need to rename the template and solution file to `template.h` and `solution.h`, otherwise it will not run.**
 
 ![onlineGDB Demo](img/onlinegdb_demo.gif "onlineGDB Demo")
 
