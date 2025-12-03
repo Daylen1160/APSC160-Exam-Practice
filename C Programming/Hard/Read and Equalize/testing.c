@@ -3,6 +3,8 @@
 #include "solution.c"
 
 // DO NOT TOUCH ANYTHING BELOW THIS LINE
+#include <stdio.h>
+
 #define test1File "test1.txt"
 #define test2File "test2.txt"
 #define test3File "test3.txt"

@@ -1,9 +1,9 @@
 // OnlineGDB users: Change this to either "template.h" or "solution.h" to test
 // Local IDE/Git users: Change this to either "template.c" or "solution.c" to test
-#include "solution.c"
 #include "template.c"
 
 // DO NOT TOUCH ANYTHING BELOW THIS LINE
+#include <stdio.h>
 #include <stdbool.h>
 #include <stddef.h>
 #include <string.h>

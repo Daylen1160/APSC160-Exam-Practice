@@ -4,6 +4,8 @@
 
 **Topics:** File I/O, Strings, Characters, Encoding
 
+> Note: This problem seems to not work on onlineGDB for now. Updates coming soon.
+
 ## Description
 
 You want to communicate with aliens. They speak a special language though that requires advanced decoding.

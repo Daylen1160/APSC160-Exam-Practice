@@ -3,6 +3,7 @@
 #include "template.c"
 
 // DO NOT TOUCH ANYTHING BELOW THIS LINE
+#include <stdio.h>
 int main() {
     printf("Running Two Sum (Smallest Index Sum) Test Cases...\n");
     printf("====================================================\n\n");

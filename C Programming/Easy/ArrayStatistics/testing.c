@@ -3,6 +3,8 @@
 #include "template.c"
 
 // DO NOT TOUCH ANYTHING BELOW THIS LINE
+#include <stdio.h>
+#include <stdbool.h>
 bool areDoublesEqual(double a, double b);
 
 int main() {
