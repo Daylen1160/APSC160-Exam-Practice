@@ -3,7 +3,7 @@
 > Also in *Daylen APSC 160 MT2 Practice Problems*
 
 **Recommended Time:** 5 - 10 min 
-**Topics:** Arrays, Functions, Control, Fundamentals 
+**Topics:** Arrays, Functions, Loops, Control
 
 ## Description
 Given an array of integers `nums`, complete the 3 methods to:

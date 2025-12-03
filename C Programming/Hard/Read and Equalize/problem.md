@@ -4,7 +4,7 @@
 
 **Recommended Time:** 15 - 45 min
 
-**Topics:** File I/O, Arrays, Functions, Control, Fundamentals
+**Topics:** File I/O, Arrays, Functions, Loops, Control
 
 ## Description
 Read numbers from a file in a 2-column format. Based on whether a given number `evenOrOdd` is even or odd:

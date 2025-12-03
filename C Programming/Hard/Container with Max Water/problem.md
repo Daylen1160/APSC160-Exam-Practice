@@ -4,7 +4,7 @@
 
 **Recommended Time:** 30 - 45 min
 
-**Topics:** Arrays, Control, Fundamentals
+**Topics:** Arrays, Loops, Control
 
 ## Description
 You are given an integer array `height` of length `heightSize`. There are `heightSize` vertical lines drawn such that the two endpoints of the i-th line are `(i, 0)` and `(i, height[i])`.

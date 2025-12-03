@@ -4,7 +4,7 @@
 
 **Recommended Time:** 10 - 20 min
 
-**Topics:** File I/O, Arrays, Control, Fundamentals
+**Topics:** File I/O, Arrays, Loops, Control
 
 ## Description
 Write a function that writes all factors of the integer `n` to a file named `factors.txt`, then reads all the values from `factors.txt` that are divisible by `d` into `output_array`. Return the number of array entries in `output_array` that were changed from `0` to a divisor (i.e., the number of non-garbage values you wrote).

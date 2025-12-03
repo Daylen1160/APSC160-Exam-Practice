@@ -18,14 +18,14 @@ The next state of the board is determined by applying the above rules simultaneo
 
 ## Input / Output
 
-- **Input:** `int board[][]`, `int NUMROWS`, `int NUMCOLS`
+- **Input:** `int NUMROWS`, `int NUMCOLS`, `int board[][]`
 - **Output:** Modify `board` in-place to represent the next state according to the rules above.
 
 ## Examples
 
 
 ```text
-Input: board = [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
+Input: 4, 3, [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
 Output: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
 ```
 
@@ -33,7 +33,7 @@ Output: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
 
 
 ```text
-Input: board = [[1,1],[1,0]]
+Input: 2, 2, [[1,1],[1,0]]
 Output: [[1,1],[1,1]]
 ```
 

@@ -4,7 +4,7 @@
 
 **Recommended Time:** 10 - 15 min
 
-**Topics:** Loops, Control, Fundamentals
+**Topics:** Loops, Control
 
 ## Description
 In Berland it is the holiday of equality. In honor of the holiday the king decided to equalize the welfare of all citizens in Berland at the expense of the state treasury.

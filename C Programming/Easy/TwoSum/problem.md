@@ -4,7 +4,7 @@
 
 **Recommended Time:** 5-10 min 
 
-**Topics:** Arrays, Control, Fundamentals
+**Topics:** Arrays, Loops, Control
 
 ## Description
 Given an array of integers `nums` and an integer `target`, return the sum of the **two indices** of the two numbers such that they add up to `target`.
