@@ -1,4 +1,4 @@
-# EXTRA-HARD Problem: Arduino Simon Game Implementation
+# 🔴🔴🔴 EXTRA-HARD Problem: Arduino Simon Game Implementation
 
 **Recommended Time:** 75-90 minutes  
 **Topics:** Arrays, Functions, Digital Input/Output, Random Numbers, Control Flow, Loops

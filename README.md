@@ -39,7 +39,7 @@ Copy and paste the template and solution files into onlineGDB. Make sure to use 
 
 > I would recommend doing this if you are interested in CPEN, ELEC, or BMEG as you will inevitably be using Git in the future for classes!
 
-For those who want to use their own IDE (VSCode, VS, Codeblocks, etc), click *Code* and *Copy the HTTPS link*. Navigate to your directory of choice. Then in *Terminal* or *Command Prompt*.   Clone the repository using the following:
+For those who want to use their own IDE (VSCode, VS, Codeblocks, etc), click *Code* and *Copy the HTTPS link*. Navigate to your directory of choice. Then open *Terminal* or *Command Prompt* or *Git Bash*. Clone the repository using the following:
 
 ``` bash
 git clone [THE LINK YOU JUST COPIED]
@@ -65,13 +65,14 @@ I don't recommend this method to be fair. As I'd choose to be simplistic with on
 
 To do it through downloading, click *Code* then *Download ZIP*. Then open the folder in your IDE.
 
-You can also just create the `template.c`, `solution.c`, and `testing.c` files yourself, and then copy and paste from this website. (like what I did in onlineGDB)
+You can also just create the `template.c`, `solution.c`, and `testing.c` files yourself, and then copy and paste from this website. (like what I did in OnlineGDB)
 
 
 ---
 <ins> For Arduino questions: </ins>  
 
-In the `problem.md` file, there is a template to TinkerCAD
+In the `problem.md` file, there is a template to TinkerCAD. Complete the program there, and make sure it is set to private.
+
 ## Topics Covered
 
 - **C Programming**
@@ -80,7 +81,7 @@ In the `problem.md` file, there is a template to TinkerCAD
     - File I/O
     - Control
     - Functions
-    - Arrays
+    - Arrays (1D & 2D)
     - Strings
     - Random Numbers
 - **Arduino Programming**
@@ -118,7 +119,9 @@ If you want additional tips/insights or anything else, email either/both of us!
 
 ### Future Updates <sub> (hopefully) </sub>
 
-- Make user I/O problems 
+- Make user I/O problems.
 - Get random/string problems from Aly's guide working. As of now, just use his guide on Canvas.
+- Fix Alien Language to work on OnlineGDB.
+- Possibly add comments in the solutions if people ask for it.
 
 
