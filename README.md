@@ -93,10 +93,12 @@ If you find any mistakes/problems/suggestions in `C Programming` or issues with 
 
 If you find any mistakes/problems/suggestions in `Arduino Programming`, email alykhan5@student.ubc.ca
 
+Feel free to use Piazza to post questions related to solving the problems.
+
 If you want additional tips/insights or anything else, email either/both of us!
 
 ---
 
 ### Future Updates <sub> (hopefully) </sub>
 - Make user I/O problems
-- Get random/string problems from Aly's guide working
+- Get random/string problems from Aly's guide working. As of now, just use his guide on Canvas.
