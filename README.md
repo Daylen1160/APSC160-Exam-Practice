@@ -119,6 +119,8 @@ If you want additional tips/insights or anything else, email either/both of us!
 
 ### Future Updates <sub> (hopefully) </sub>
 
+Updates to the repository can be found at `CHANGELOG.md`. Be sure to check there every now and then so you know whether to refresh the repository or not. I'll announce a Piazza statement if it's important too.
+
 - Make user I/O problems.
 - Get random/string problems from Aly's guide working. As of now, just use his guide on Canvas.
 - Fix Alien Language to work on OnlineGDB.
