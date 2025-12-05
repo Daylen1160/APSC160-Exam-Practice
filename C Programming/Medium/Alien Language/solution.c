@@ -11,7 +11,8 @@ int main (void) {
 
     char sentence[MAX_SENTENCE_LENGTH];
     printf("Enter a sentence to translate:\n");
-    scanf("%[^\n]%*c", sentence);
+    scanf("%[^\n]%*c", sentence); //Can also use fgets
+    
 
     char alienSentence[MAX_SENTENCE_LENGTH];
     for (int i = 0; i < strlen(sentence); i++) {
