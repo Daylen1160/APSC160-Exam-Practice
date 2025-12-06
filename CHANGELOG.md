@@ -42,5 +42,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Documentation for all testing.c files to #include "template.c" for all problems
- 
+
+- ## [1.0.4] - 2025-06-12
+
+### Added
+
+- In Array Statistics's testing.c file, added the math.h library
+
  
