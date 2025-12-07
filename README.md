@@ -35,7 +35,7 @@ Copy and paste the template and solution files into onlineGDB. Make sure to use 
 
 ### 2. Using Git
 
-> Note: Only Windows (10/11) OS does not have Git pre-installed
+> Note: Only Windows (10/11) OS does not have Git pre-installed: https://github.com/git-guides/install-git 
 
 > I would recommend doing this if you are interested in CPEN, ELEC, or BMEG as you will inevitably be using Git in the future for classes!
 
