@@ -47,7 +47,7 @@ git clone [THE LINK YOU JUST COPIED]
 
 Now open the folder in your IDE and run from there!
 
-> I use Visual Studio Code (VSCode) but feel free to use whatever IDE you'd like!
+> I use Visual Studio Code (VSCode) but feel free to use whatever IDE you'd like! https://code.visualstudio.com/docs/languages/cpp (C/C++ both work the same)
 
 ![onlineGDB Demo](img/git_demo.gif "onlineGDB Demo")
 
