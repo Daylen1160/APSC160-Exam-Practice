@@ -25,6 +25,20 @@ The maximum possible strength score is **7**.
 - **Input:** A string `password`.
 - **Output:** An integer representing the strength score (0 to 7).
 
+## Additional Functions
+
+Alongside all the other ctype functions you should know for the exam, you need two more in this problem:
+
+`bool isdigit(char cr)` 
+
+Returns true if the character is a digit, false otherwise
+
+<br>
+
+`bool isalpha(char cr)`
+
+Returns true if the character is alphabetic (it's a letter uppercase or lowercase)
+
 ## Examples
 
 ```text

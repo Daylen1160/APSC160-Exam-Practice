@@ -33,6 +33,14 @@ Take an input from the user (the sentence you want to translate), and write it t
 
 Testing is a bit different than all the other problems. You need to run `template.c` or `solution.c` first to get the text in `decoder.txt`, then run `testing.c` without including either file.
 
+## Additional Functions
+
+Alongside all the other ctype functions you should know for the exam, you might need one more in this problem:
+
+`bool isdigit(char cr)` 
+
+Returns true if the character is a digit, false otherwise
+
 ## Examples
 
 ```text
