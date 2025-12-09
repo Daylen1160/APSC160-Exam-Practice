@@ -39,13 +39,12 @@ int getLiveNeighbors(int NUMROWS, int NUMCOLS, int board[][NUMCOLS], int row, in
     int liveNeighbors = 0;
     for (int i = -1; i <= 1; i++) {
         for (int j = -1; j <= 1; j++) {
-            if (i == 0 && j == 0) {
-                continue;
-            }
-            int neighborRow = row + i;
-            int neighborCol = col + j;
-            if (neighborRow >= 0 && neighborRow < NUMROWS && neighborCol >= 0 && neighborCol < NUMCOLS) {
-                liveNeighbors += board[neighborRow][neighborCol];
+            if (!(i == 0 && j == 0)) {
+                int neighborRow = row + i;
+                int neighborCol = col + j;
+                if (neighborRow >= 0 && neighborRow < NUMROWS && neighborCol >= 0 && neighborCol < NUMCOLS) {
+                    liveNeighbors += board[neighborRow][neighborCol];
+                }
             }
         }
     }
