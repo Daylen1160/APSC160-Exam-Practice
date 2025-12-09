@@ -73,5 +73,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Game of Life solution.c to not use continue
 
+## [1.0.9] - 2025-12-08
+
+### Added
+
+- Alien Language: Added isdigit function prototype
+- Password Validation: Added isdigit and islpha function prototype
+
 
  
