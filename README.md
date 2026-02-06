@@ -10,6 +10,11 @@ What's going on? This was made with Git, a software that is used by programmers 
 
 This guide is meant to serve as an additional resource to studying for APSC 160 Exams. Preferably, work your way up the problems, from 'Warm Up/Easy' to 'Medium' and then 'Hard'. We also **strongly** recommend to check out `tips.md` too for additional advice! 
 
+Each folder contains only content up to that point that is relevant to that. So for ___ you should study:
+- MT1: MT1
+- MT2: MT1 & MT2
+- FE: MT1, MT2, & FE
+
 ### For C Questions
 
 You will have a question file, `problem.md`, and 3 C files:
