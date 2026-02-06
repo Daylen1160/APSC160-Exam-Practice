@@ -102,7 +102,7 @@ In the `problem.md` file, there is a template to TinkerCAD. Complete the program
 
 ## Authors
 
-| Name | Year | Major | Email | Status |
+| Name | Year | Major | Email | Currently TAing? |
 |:---:|:---:|:---:|:---:| :---:
 | Daylen Chun | 2nd | Computer Engineering | dchun924@student.ubc.ca | ✅
 | Aly Khan Nuruddin | 4th | Biomedical Engineering | alykhan5@student.ubc.ca | ❌
