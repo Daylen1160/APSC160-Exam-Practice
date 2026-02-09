@@ -1,7 +1,5 @@
 # 🟡 Divisible Factors
 
-> Also in *Daylen APSC 160 MT2 Practice Problems*
-
 **Recommended Time:** 10 - 20 min
 
 **Topics:** File I/O, Arrays, Loops, Control

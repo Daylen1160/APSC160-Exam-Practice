@@ -1,6 +1,8 @@
 # 💻 Welcome to the APSC 160 Exam Practice Problems Set! 💻
 
 > **Disclaimer:** These questions are not officially endorsed by APSC 160's teaching team, they are just TAs' opinions.
+<br>
+
 > Please star this repository if you liked it :)
 
 ## Overview

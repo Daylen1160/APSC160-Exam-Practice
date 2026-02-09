@@ -1,7 +1,5 @@
 # 🟢 Array Statistics
 
-> Also in *Daylen APSC 160 MT2 Practice Problems*
-
 **Recommended Time:** 5 - 10 min 
 **Topics:** Arrays, Functions, Loops, Control
 

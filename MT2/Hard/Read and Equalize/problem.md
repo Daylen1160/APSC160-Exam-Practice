@@ -1,7 +1,5 @@
 # 🔴 Read and Equalize
 
-> Also in *Daylen APSC 160 MT2 Practice Problems*
-
 **Recommended Time:** 15 - 45 min
 
 **Topics:** File I/O, Arrays, Functions, Loops, Control

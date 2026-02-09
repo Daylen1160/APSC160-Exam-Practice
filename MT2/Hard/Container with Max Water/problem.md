@@ -1,7 +1,5 @@
 # 🔴Container With Max Water
 
-> Also in *Daylen APSC 160 MT2 Practice Problems*
-
 **Recommended Time:** 30 - 45 min
 
 **Topics:** Arrays, Loops, Control

@@ -1,7 +1,5 @@
 # 🟡 Holiday of Equality
 
-> Also in *Daylen APSC 160 MT2 Practice Problems*
-
 **Recommended Time:** 10 - 15 min
 
 **Topics:** Loops, Control
