@@ -80,5 +80,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Alien Language: Added isdigit function prototype
 - Password Validation: Added isdigit and islpha function prototype
 
+- ## [2.0.0] - 2026-02-09
+
+### Changed
+- From Final Exam Guide --> Exam Guide
+- Split MT2 and Final Exam
+- Updated documentation in README.md
+
 
  
