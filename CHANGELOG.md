@@ -87,5 +87,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Split MT2 and Final Exam
 - Updated documentation in README.md
 
+## [2.0.1] - 2026-02-01
+
+### Fixed
+- Images in Game of Life and License Plate Generator now displayed as expected
+
 
  
