@@ -29,7 +29,7 @@ Input: 4, 3, [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
 Output: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
 ```
 
-![Board1](../../../img/board1.jpg "Board1")
+![Board1](../../../../img/board1.jpg "Board1")
 
 
 ```text
@@ -37,7 +37,7 @@ Input: 2, 2, [[1,1],[1,0]]
 Output: [[1,1],[1,1]]
 ```
 
-![Board2](../../../img/board2.jpg "Board2")
+![Board2](../../../../img/board2.jpg "Board2")
 
 ## Hints:
 - I would strongly recommend making helper functions. Here are the ones I used:

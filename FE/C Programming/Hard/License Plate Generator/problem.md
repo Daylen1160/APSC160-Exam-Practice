@@ -19,7 +19,7 @@ You must also check that no two license plates contain the same set of letters o
 - **Output:** N/A
 
 ## ASCII Table
-![ASCII_table](../../../img/ascii.gif "ASCII_table")
+![ASCII_table](../../../../img/ascii.gif "ASCII_table")
 
 ## Example
 
