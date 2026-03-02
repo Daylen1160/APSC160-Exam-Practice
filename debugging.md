@@ -79,7 +79,7 @@ Check the condition variable that controls your loop. Make sure it's being updat
 ## 📏 3. Off-By-One Errors 
 
 **The Bug:**
-You looped one too many times, or one too few.
+You looped one too many times, or one too few. This is most common in loops that iterate over arrays.
 
 **The Rule of Thumb for Arrays:**
 C arrays are **0-indexed**.
@@ -95,7 +95,7 @@ C arrays are **0-indexed**.
 *   ✅ `for (int i = 0; i < N; i++)` (Correct)
 *   ✅ `for (int i = 0; i <= N-1; i++)` (Correct, but a bit verbose)
 
-> Note: Just be careful with the condition in your loops. (e.g. if I'm getting a value from 0-15, is it inclusive or exclusive?)
+> NOTE: Just be careful with the condition in your loops. (e.g. if I'm getting a value from 0-15, is it inclusive or exclusive?)
 
 ## ➗ 4. Casting 
 
