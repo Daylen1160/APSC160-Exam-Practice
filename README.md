@@ -2,10 +2,6 @@
 
 > **Disclaimer:** These questions are not officially endorsed by APSC 160's teaching team, they are just TAs' opinions.
 
-<br>
-
-> Please star this repository if you liked it :)
-
 ## Overview
 What's going on? This was made with Git, a software that is used by programmers to store code. You are currently on Github, the most commonly used platform that hosts code (like how YouTube hosts videos; Git and Github are not the same thing). You are currently looking at a repository (a folder with stuff in it).
 
@@ -113,11 +109,9 @@ In the `problem.md` file, there is a template to TinkerCAD. Complete the program
 | Daylen Chun | 2nd | CPEN | dchun924@student.ubc.ca | ✅
 | Aly Khan Nuruddin | Graduated! 🥳 | BMEG| alykhan5@student.ubc.ca | ❌
 
-> The problems are sourced and possibly modified from various sources including CodeForces, HackerRank, CodeChef, LeetCode, and our imaginations. Message dchun924@student.ubc.ca for credentials.
+>Mind starring the repository if you enjoyed it? :)
 
 ## Inquiries
-
-Daylen did a poor job, so this guide likely has some errors that we happened to not catch.
 
 If you find any mistakes/problems/suggestions in `C Programming` or `Arduino Programming` or issues with the repository/git/getting things running, email dchun924@student.ubc.ca
 

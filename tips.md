@@ -1,4 +1,4 @@
-# 💡 Success Guide & Additional Tips
+# 💡 Success Guide & Additional Tips 💡
 
 ## 📋 Quick Note
 > A small note about Daylen: I took this course in 2024/2025 Term 2, so it hasn't been that long. I made this to give you personal insights to me being in your shoes, and my friends alongside me who have complained to me about the course.  
@@ -8,20 +8,22 @@ This study guide is designed to teach you how to **"think like a coder"**, not j
 We made this knowing a lot of you have the question: I know the syntax, when I see the solutions it makes sense, but **how do I come up with a solution?**
 
 
-## 🧠 Strategic Problem Solving
+## 🧠 Strategic Problem Solving 
 
 ### 1. Plan Before You Code
-If you can't immediately see an obvious solution (which is expected for the medium & especially the hard problems), **do not just start writing code**.
+If you can't immediately see an obvious solution (which is expected for the medium & especially the hard problems), **do not just start writing code**. Here's some common ways to plan:
 * Draw Flowcharts: Visualize the logic.
 * Write Comments: Type out your steps in plain English first.
 * Use Paper/Tablet: Scribble down your ideas.
-* Why? Problem-solving and innovation are the hard parts; the actual coding is often straightforward once you have a plan.
+
+Why? Problem-solving and innovation are the hard parts; the actual coding is often straightforward (as long as you know the syntax) once you have a plan.
 
 ### 2. Read Carefully
 It sounds simple—you were told this as a kid—but a lot of errors come from not fully understanding the question.
-* **Read the question.**
+* **Read the question**
 * If you don't understand it, read it again
 * While you are working on the problem, read it again
+* Yes you, stop scanning this text, **read the question carefully**
 
 ### 3. Don't cheat
 This is obviously not graded. You voluntarily came here to prepare better for the exam. Why are you using AI or looking at our solutions so quick? Think & struggle please! You will not have these tools during the exam. Whether you cheat on these problems is up to you, but we make these problems to be a resource for you and by cheating you are wasting it.
@@ -39,9 +41,9 @@ Sometimes you cannot get a problem because you are not in the right space at tha
 
 ## 🛏️ Health
 
-- **Don't overwork:** I would never ever ever ever recommend doing every problem in this guide in one sitting. Think about doing it every day building up to the exam, doing an hour in the morning, hour in the afternoon, and hour at night. Consistency puts it in long term memory and it becomes more natural. Cramming puts it in short term memory and you become overly stressed. 
-- **Sleep early:** Don't be working at unholy hours. You will always think better with good sleep. 
-- **Eat right:** Fuel your brain with the right thing, it won't operate at your highest level otherwise. 
+- **Don't overwork:** I would never ever ever ever recommend doing every problem in this guide in one sitting. Think about working on the problems every day for at least a week building up to the exam, doing even just 30 min in the morning, afternoon, and at night. Consistency puts it in long term memory and it becomes more natural. Cramming puts it in short term memory and you become overly stressed. 
+- **Sleep early:** Don't be working at unholy hours. You will always think better with good sleep. (I'm a hypocrite)
+- **Eat right:** Fuel your brain with the right stuff, it won't operate at your highest level otherwise. 
 - **Don't overthink it:** You are taking this exam either way, so just do your best in prepping. 
 
 ## 🗣 Last Encouraging Words
