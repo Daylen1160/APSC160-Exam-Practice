@@ -12,18 +12,18 @@ Wow, unlike all the others I have seen, this one doesn't even tell me a line num
 
 In a nutshell: Your program tried to utilize something (memory) it wasn't allowed to touch. 
 
-Here's an analogy: You (the program) try to open someone else's door at Vanier, Mackenzie House (memory location you can't use). You don't have access, so Campus Security (the operating system) stops you and arrests you for trespassing, kicking you out (the crash).
+Here's an analogy: You (the program) try to open someone else's door at Vanier, Mackenzie House (memory location you can't use). You don't have access, so Campus Security (the operating system) stops you and arrests you for trespassing, kicking you out (seg fault). They also wrote it down in your academic record (core dumped).
 
 **The Causes:**
 
-*   **Array Out of Bounds:** Trying to access the an element we don't have in an array. Say, if we wan't the last element, we write `arr[10]` in an array of size 10 (indexes go from 0 to 9!). Recall we start counting from 0, so the last index is `size - 1`.
+*   **Array Out of Bounds:** Trying to access the an element we don't have in an array. Say, if we want the last element, we write `arr[10]` in an array of size 10 (indexes go from 0 to 9!). Recall we start counting from `0`, so the last index is `size - 1`.
     ```c
     int arr[10];
     printf("%d", arr[10]); // WRONG
     printf("%d", arr[9]); // CORRECT
     ```
 
-    **The Fix**: Make sure you are accessing an index that exists.
+    **The Fix**: Make sure you are accessing an index that exists. (see 3. Off-By-One Errors below)
 
     
 *   **NULL:** If a function returns `NULL` (like `fopen` if a file isn't found), and you still try to use it.
@@ -95,7 +95,7 @@ C arrays are **0-indexed**.
 *   ✅ `for (int i = 0; i < N; i++)` (Correct)
 *   ✅ `for (int i = 0; i <= N-1; i++)` (Correct, but a bit verbose)
 
-> NOTE: Just be careful with the condition in your loops. (e.g. if I'm getting a value from 0-15, is it inclusive or exclusive?)
+> NOTE: Just be careful with the condition in your loops and pay attention to the wording of the question. (e.g. if I'm getting a value from 3-15, is it inclusive or exclusive of 3 and 15?)
 
 ## ➗ 4. Casting 
 
