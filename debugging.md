@@ -88,14 +88,16 @@ C arrays are **0-indexed**.
 *   Last element: `N - 1`
 
 **The Cause:**
-*   ❌ `for (int i = 0; i <= size; i++)` (Segmentation fault! Accesses one past the end)
-*   ❌ `for (int i = 1; i < size; i++)` (Skips the first element `arr[0]`)
+*   ❌ `for (int i = 0; i <= N; i++)` (Segmentation fault! Accesses one past the end)
+*   ❌ `for (int i = 1; i < N; i++)` (Skips the first element `arr[0]`)
 
 **The Fix:**
-*   ✅ `for (int i = 0; i < size; i++)` (Correct for arrays)
-*   ✅ `for (int i = 0; i <= size-1; i++)` (Correct, but a bit verbose)
+*   ✅ `for (int i = 0; i < N; i++)` (Correct)
+*   ✅ `for (int i = 0; i <= N-1; i++)` (Correct, but a bit verbose)
 
-## 4. Casting ➗
+> Note: Just be careful with the condition in your loops. (e.g. if I'm getting a value from 0-15, is it inclusive or exclusive?)
+
+## ➗ 4. Casting 
 
 **The Bug:**
 In C, `integer` truncates decimal values (it always rounds down).
