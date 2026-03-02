@@ -100,7 +100,7 @@ C arrays are **0-indexed**.
 **The Bug:**
 In C, `integer` truncates decimal values (it always rounds down).
 
-**The bug:**
+**The Cause:**
 *   `1 / 7` results in `0`.
 *   `9 / 10` results in `0`.
 *   `199 / 100` results in `1`.
