@@ -183,6 +183,7 @@ int main() {
     }
     printf("----------------------------------------\n");
 
-    printf("\nResult: %d/%d tests passed.\n", passedTests, totalTests);
+    printf("\nSummary: %d/%d test cases passed.\n", passedTests, totalTests);
+    printf("====================================================\n");
     return 0;
 }

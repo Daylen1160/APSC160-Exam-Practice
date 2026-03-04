@@ -63,7 +63,7 @@ int main(void) {
     // 3. Run student's main
     printf("Invoking your main() with input: \"%s\"\n", test_sentence);
     printf("(Your program output starts below)\n");
-    printf("----------------------------------\n");
+    printf("----------------------------------------\n");
     
     // We expect student_main to return 0, but whatever it returns is fine.
     int ret = student_main();
@@ -71,7 +71,7 @@ int main(void) {
     // Flush stdout to ensure student output is printed before our validation output
     fflush(stdout);
     
-    printf("\n----------------------------------\n");
+    printf("\n----------------------------------------\n");
     printf("(Student program finished with exit code %d)\n", ret);
 
     // 4. Validate output file (decoder.txt)
@@ -122,10 +122,18 @@ int main(void) {
     printf("Line 2 (Expected): \"%s\"\n", expected);
 
     if (strcmp(actual, expected) == 0) {
-        printf("\n✅ SUCCESS: The encoded message matches the expected output!\n");
+        printf("Test Case 1: PASS\n");
+        printf("----------------------------------------\n");
+        printf("\nSummary: 1/1 test cases passed.\n");
+        printf("====================================================\n");
         return 0;
     } else {
-        printf("\n❌ FAILURE: The encoded message is incorrect.\n");
+        printf("Test Case 1: FAIL\n");
+        printf("  Expected: \"%s\"\n", expected);
+        printf("  Actual:   \"%s\"\n", actual);
+        printf("----------------------------------------\n");
+        printf("\nSummary: 0/1 test cases passed.\n");
+        printf("====================================================\n");
         return 1;
     }
 }

@@ -78,6 +78,7 @@ int main() {
     int len7 = longestCommonPrefix(strs7, 3, prefix7);
     passedTests += printTestResult(totalTests, "", prefix7, 0, len7);
 
-    printf("\nSUMMARY: Passed %d/%d tests.\n", passedTests, totalTests);
+    printf("\nSummary: %d/%d test cases passed.\n", passedTests, totalTests);
+    printf("====================================================\n");
     return 0;
 }

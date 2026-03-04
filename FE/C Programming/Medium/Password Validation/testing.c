@@ -192,6 +192,7 @@ int main() {
     int actual11 = passwordStrengthValidator(input11);
     passedTests += printTestResult(totalTests, expected11, actual11, input11);
 
-    printf("\nSUMMARY: Passed %d/%d tests.\n", passedTests, totalTests);
+    printf("\nSummary: %d/%d test cases passed.\n", passedTests, totalTests);
+    printf("====================================================\n");
     return 0;
 }

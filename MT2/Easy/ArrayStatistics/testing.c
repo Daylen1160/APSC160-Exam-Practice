@@ -160,7 +160,8 @@ int main() {
     printf("----------------------------------------\n");
 
     // --- Summary --- //
-    printf("\nSUMMARY: Passed %d/%d tests.\n", passedTests, totalTests);
+    printf("\nSummary: %d/%d test cases passed.\n", passedTests, totalTests);
+    printf("====================================================\n");
     return 0;
 }
 
