@@ -17,9 +17,9 @@ Each folder contains only content up to that point that is relevant to that. So 
 
 You will have a question file, `problem.md`, and 3 C files:
 
-- `template.c` Write your code here.
+- `template.h` Write your code here.
 - `testing.c` Run this file. Change the `#include` at the top to run either your template or our solution, **do not change anything else**. If your program can get all the test cases here your solution is correct. 
-- `solution.c` Do not change anything here. Answers are here.
+- `solution.h` Do not change anything here. Answers are here.
 
 ### For Arduino Questions
 
@@ -73,7 +73,7 @@ I don't recommend this method to be fair. As I'd choose to be simplistic with On
 
 To do it through downloading, click *Code* then *Download ZIP*. Then open the folder in your IDE.
 
-You can also just create the `template.c`, `solution.c`, and `testing.c` files yourself, and then copy and paste from this website. (like what I did in OnlineGDB)
+You can also just create the `template.h`, `solution.h`, and `testing.c` files yourself, and then copy and paste from this website. (like what I did in OnlineGDB)
 
 
 ---
@@ -128,6 +128,5 @@ Updates to the repository can be found at `CHANGELOG.md`. Be sure to check there
 - MT1 Problems (sorry 2025/2026 Term 2... oopsy poopsy)
 - Make user I/O problems.
 - Get random/string problems from Aly's guide working. As of now, just use his guide on Canvas. (Only need for final exam)
-- Fix Alien Language to work on OnlineGDB.
 - Add comments to solutions.
 - Add problem credits & links.
