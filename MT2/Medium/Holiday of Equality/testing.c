@@ -1,6 +1,5 @@
-// OnlineGDB users: Change this to either "template.h" or "solution.h" to test
-// Local IDE/Git users: Change this to either "template.c" or "solution.c" to test
-#include "template.c"
+// Change this to either "template.h" or "solution.h" to test
+#include "template.h"
 
 // DO NOT TOUCH ANYTHING BELOW THIS LINE
 #include <stdio.h>
@@ -148,6 +147,7 @@ int main() {
 	}
 	printf("----------------------------------------\n");
 
-	printf("\nSUMMARY: Passed %d/%d tests.\n", passedTests, totalTests);
+	printf("\nSummary: %d/%d test cases passed.\n", passedTests, totalTests);
+	printf("====================================================\n");
 	return 0;
 }

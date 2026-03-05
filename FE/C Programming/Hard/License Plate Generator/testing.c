@@ -1,6 +1,3 @@
-/* ========================================================================= */
-/* TEST HARNESS SETUP                                                       */
-/* ========================================================================= */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,9 +15,8 @@ void fake_srand(unsigned int seed);
 #define srand fake_srand
 
 /* ============ DO NOT CHANGE ANYTHING ABOVE  THIS LINE ============ */
-// OnlineGDB users: Change to "template.h" or "solution.h" if using the rename trick
-// Local users: Keep as "template.c" or "solution.c"
-#include "template.c"
+// Change this to either "template.h" or "solution.h" to test
+#include "template.h"
 /* ============ DO NOT CHANGE ANYTHING BELOW THIS LINE ============ */
 
 static unsigned long int next = 1;
@@ -187,6 +183,7 @@ int main() {
     }
     printf("----------------------------------------\n");
 
-    printf("\nResult: %d/%d tests passed.\n", passedTests, totalTests);
+    printf("\nSummary: %d/%d test cases passed.\n", passedTests, totalTests);
+    printf("====================================================\n");
     return 0;
 }

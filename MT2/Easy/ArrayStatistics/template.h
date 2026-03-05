@@ -14,7 +14,7 @@ int calculateAboveOrEqualsAverage(int nums[], int numsSize);
  */ 
  
 int calculateSum(int nums[], int numsSize) {
-    // TODO: Implement this method
+    // TODO: Implement this function
 }
 
 
@@ -26,7 +26,7 @@ int calculateSum(int nums[], int numsSize) {
  */ 
  
 double calculateAverage(int nums[], int numsSize) {
-    // TODO: Implement this method
+    // TODO: Implement this function
 }
 
 
@@ -36,9 +36,7 @@ double calculateAverage(int nums[], int numsSize) {
  * @param numsSize - size of nums[]
  * @return the number of elements above or equal to the average of integers in nums[]
  */ 
- 
+
 int calculateAboveOrEqualsAverage(int nums[], int numsSize) {
-    // TODO: Implement this method
+    // TODO: Implement this function    
 }
-
-
