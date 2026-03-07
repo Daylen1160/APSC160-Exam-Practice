@@ -64,3 +64,7 @@ Output:
 
 Explanation: All citizens already have 12 burles; no spending required.
 ```
+
+## Credits
+
+https://codeforces.com/problemset/problem/758/A

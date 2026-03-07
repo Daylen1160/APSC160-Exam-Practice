@@ -47,4 +47,7 @@ Output: [[1,1],[1,1]]
     - `deadCellNextState`: Determines the next state of a dead cell based on the number of alive neighbors
 - Remember that the new states of cells are based on the original states of cells. (e.g. if you change a cell, then iterate, you should not be looking at the new, updated value, you should be looking at the original value)
 
+## Credits
+
+https://leetcode.com/problems/game-of-life/
 

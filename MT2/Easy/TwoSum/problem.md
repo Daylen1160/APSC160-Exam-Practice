@@ -40,3 +40,7 @@ Output: 1
 Input: [1, 2, 3, 4], 4, 10
 Output: -1
 ```
+
+## Credits
+
+https://leetcode.com/problems/two-sum/

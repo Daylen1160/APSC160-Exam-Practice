@@ -40,3 +40,7 @@ Example 3:
 Input: accounts = 3, 3, [[2,8,7],[7,1,3],[1,9,5]]
 Output: 17
 ```
+
+## Credits
+
+https://leetcode.com/problems/richest-customer-wealth/
