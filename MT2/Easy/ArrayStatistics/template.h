@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdbool.h>
-#include <math.h>
-
 int calculateSum(int nums[], int numsSize);
 double calculateAverage(int nums[], int numsSize);
 int calculateAboveOrEqualsAverage(int nums[], int numsSize);
