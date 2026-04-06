@@ -4,6 +4,7 @@
  * @author Daylen Chun
  */
 
+void gameOfLife(int NUMROWS, int NUMCOLS, int board[][NUMCOLS]);
 void copyBoard(int NUMROWS, int NUMCOLS, int source[][NUMCOLS], int dest[][NUMCOLS]);
 int getLiveNeighbors(int NUMROWS, int NUMCOLS, int board[][NUMCOLS], int row, int col);
 int liveCellNextState(int liveNeighbors);
