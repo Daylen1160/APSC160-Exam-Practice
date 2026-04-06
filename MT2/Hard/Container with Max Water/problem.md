@@ -41,7 +41,8 @@ Explanation: Only two lines, area = (1 - 0) * min(1,1) = 1.
 - There are two common approaches:
   - Brute force: try all pairs `(i, j)` and compute area — O(n^2).
   - Two-pointer: start with left=0 and right=heightSize-1, compute area, then move the pointer at the shorter line inward — O(n).
-- I would advise to program the brute force method first, get that working, and then get the two-pointer solution. Getting both solutions working is highly recommended.
+- I would advise to program the brute force method first, get that working, and then get the two-pointer solution. Getting both solutions working is STRONGLY recommended.
+- It is optional to use the `math.h` library, but you might find the `fmin` and `fmax` functions useful -- they simply return the smaller and larger of two arguments respectively.
 
 ## Credits
 

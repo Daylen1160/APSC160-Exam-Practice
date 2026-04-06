@@ -4,6 +4,8 @@
  * @author Daylen Chun
  */
 
+#include <math.h> // Contains fmax and fmin
+
 int containerWithMaxWater(int heights[], int heightSize);
 
 /**
