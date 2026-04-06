@@ -1,3 +1,8 @@
+/**
+ * @file solution.ino
+ * @brief RGB LED Sequence Solution
+ * @author Aly Khan Nuruddin
+ */
 #define NUM_LEDS 3                  // Define the number of LEDs in the RGB LED
 #define MAX_BRIGHTNESS 255          // Maximum PWM value for full brightness
 #define MIN_BRIGHTNESS 0            // Minimum PWM value to turn off LED

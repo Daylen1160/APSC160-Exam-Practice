@@ -1,3 +1,8 @@
+/**
+ * @file solution.ino
+ * @brief Traffic Light Simulator Solution
+ * @author Aly Khan Nuruddin
+ */
 // ---------------------------------------------------
 // Pin assignments
 // ---------------------------------------------------

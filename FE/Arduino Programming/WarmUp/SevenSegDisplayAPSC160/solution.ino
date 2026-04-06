@@ -1,3 +1,8 @@
+/**
+ * @file solution.ino
+ * @brief Seven Segment Display APSC160 Solution
+ * @author Aly Khan Nuruddin
+ */
 // ---------------------------------------------------
 // Define number of LEDs in the 7-segment display
 // ---------------------------------------------------

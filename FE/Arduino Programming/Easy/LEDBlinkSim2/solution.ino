@@ -1,3 +1,9 @@
+/**
+ * @file solution.ino
+ * @brief LED Blink Simulation 2 Solution
+ * @author Aly Khan Nuruddin
+ */
+
 // Total number of LEDs
 const int numLEDs = 10;
 

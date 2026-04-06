@@ -1,3 +1,8 @@
+/**
+ * @file solution.ino
+ * @brief LED Brightness Control Solution
+ * @author Aly Khan Nuruddin
+ */
 // ---------------------------------------------------
 // Variables
 // ---------------------------------------------------

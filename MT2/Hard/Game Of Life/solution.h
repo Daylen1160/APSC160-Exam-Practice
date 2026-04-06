@@ -1,13 +1,18 @@
+/**
+ * @file solution.h
+ * @brief Game of Life Solution
+ * @author Daylen Chun
+ */
+
 void copyBoard(int NUMROWS, int NUMCOLS, int source[][NUMCOLS], int dest[][NUMCOLS]);
 int getLiveNeighbors(int NUMROWS, int NUMCOLS, int board[][NUMCOLS], int row, int col);
 int liveCellNextState(int liveNeighbors);
 int deadCellNextState(int liveNeighbors);
 
 /**
- * Updates the board to the next state according to the Game of Life rules
- * @param NUMROWS Number of rows in the board
- * @param NUMCOLS Number of columns in the board
- * @param board The game board
+ * @brief Update the board to the next state according to the Game of Life rules
+ * @param[in] NUMROWS    Number of rows in the board
+ * @param[in] NUMCOLS    Number of columns in the board
  * @modifies board to its next state
  */
 void gameOfLife(int NUMROWS, int NUMCOLS, int board[][NUMCOLS]) {
@@ -27,12 +32,12 @@ void gameOfLife(int NUMROWS, int NUMCOLS, int board[][NUMCOLS]) {
 }
 
 /**
- * Calculates the number of live neighbors for a given cell
- * @param NUMROWS Number of rows in the board
- * @param NUMCOLS Number of columns in the board
- * @param board The game board
- * @param row The row index of the cell
- * @param col The column index of the cell
+ * @brief Calculate the number of live neighbors for a given cell
+ * @param[in] NUMROWS    Number of rows in the board
+ * @param[in] NUMCOLS    Number of columns in the board
+ * @param[in] board      The game board
+ * @param[in] row        The row index of the cell
+ * @param[in] col        The column index of the cell
  * @return The number of live neighbors surrounding the cell
  */
 int getLiveNeighbors(int NUMROWS, int NUMCOLS, int board[][NUMCOLS], int row, int col) {
@@ -52,8 +57,8 @@ int getLiveNeighbors(int NUMROWS, int NUMCOLS, int board[][NUMCOLS], int row, in
 }
 
 /**
- * Determines the next state of a live cell based on its live neighbors
- * @param liveNeighbors The number of live neighbors surrounding the live cell
+ * @brief Determine the next state of a live cell based on its live neighbors
+ * @param[in] liveNeighbors The number of live neighbors surrounding the live cell
  * @return The next state of the live cell (1 for alive, 0 for dead)
  */
 int liveCellNextState(int liveNeighbors) {
@@ -65,8 +70,8 @@ int liveCellNextState(int liveNeighbors) {
 }
 
 /**
- * Determines the next state of a dead cell based on its live neighbors
- * @param liveNeighbors The number of live neighbors surrounding the dead cell
+ * @brief Determine the next state of a dead cell based on its live neighbors
+ * @param[in] liveNeighbors The number of live neighbors surrounding the dead cell
  * @return The next state of the dead cell (1 for alive, 0 for dead)
  */
 int deadCellNextState(int liveNeighbors) {
@@ -78,11 +83,11 @@ int deadCellNextState(int liveNeighbors) {
 }
 
 /**
- * Copies the contents of source board to destination board
- * @param NUMROWS Number of rows in the board
- * @param NUMCOLS Number of columns in the board
- * @param source The source board to copy from
- * @param dest The destination board to copy to
+ * @brief Copy the contents of source board to destination board
+ * @param[in] NUMROWS    Number of rows in the board
+ * @param[in] NUMCOLS    Number of columns in the board
+ * @param[in] source     The source board to copy from
+ * @param[out] dest      The destination board to copy to
  */
 void copyBoard(int NUMROWS, int NUMCOLS, int source[][NUMCOLS], int dest[][NUMCOLS]) {
     for (int i = 0; i < NUMROWS; i++) {

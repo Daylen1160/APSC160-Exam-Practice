@@ -1,3 +1,9 @@
+/**
+ * @file solution.ino
+ * @brief POT Color Mixer Solution
+ * @author Aly Khan Nuruddin
+ */
+
 // Pin definitions for the RGB LED
 #define RGB_RED 11
 #define RGB_BLUE 10

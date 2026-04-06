@@ -14,7 +14,7 @@ Given an array of integers `nums` and an integer `target`, return the sum of the
 
 ## Requirements
 * You may not use the same element twice.
-* If there is a tie, return the smaller sum of indices.
+* If there are more than one pair of indicies that add to the target, return the smaller sum of indices.
 * If no two sums are possible, return `-1`.
 
 

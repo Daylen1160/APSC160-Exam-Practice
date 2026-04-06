@@ -1,13 +1,20 @@
+/**
+ * @file solution.h
+ * @brief Array Statistics Solution
+ * @author Daylen Chun
+ */
+
 int calculateSum(int nums[], int numsSize);
 double calculateAverage(int nums[], int numsSize);
 int calculateAboveOrEqualsAverage(int nums[], int numsSize);
 
-
 /**
- * @param[in] nums - array of integers
- * @param[in] numsSize - size of nums[]
- * @returns the sum of integers in nums[]
- */ 
+ * @brief Calculate the sum of integers in an array
+ *
+ * @param[in] nums       Array of integers
+ * @param[in] numsSize   Size of the array
+ * @return The sum of all integers in the array
+ */
 int calculateSum(int nums[], int numsSize) {
     int total = 0;
     for (int i = 0; i < numsSize; i++) {
@@ -16,25 +23,25 @@ int calculateSum(int nums[], int numsSize) {
     return total;
 }
 
-
-
 /**
- * @param[in] nums - array of integers
- * @param[in] numsSize - size of nums[]
- * @returns the average of integers in nums[]
- */ 
+ * @brief Calculate the average of integers in an array
+ *
+ * @param[in] nums       Array of integers
+ * @param[in] numsSize   Size of the array
+ * @return The average of all integers in the array
+ */
 double calculateAverage(int nums[], int numsSize) {
     int total = calculateSum(nums, numsSize);
     return (double) total / numsSize;
 }
 
-
-
 /**
- * @param[in] nums - array of integers
- * @param[in] numsSize - size of nums[]
- * @returns the number of elements above or equal to the average of integers in nums[]
- */ 
+ * @brief Count elements at or above the average
+ *
+ * @param[in] nums       Array of integers
+ * @param[in] numsSize   Size of the array
+ * @return The number of elements greater than or equal to the average
+ */
 int calculateAboveOrEqualsAverage(int nums[], int numsSize) {
     double average = calculateAverage(nums, numsSize);
     int aboveAverage = 0;

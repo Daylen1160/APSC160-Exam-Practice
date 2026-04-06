@@ -1,3 +1,9 @@
+/**
+ * @file solution.ino
+ * @brief Temperature Sensor Weather Indicator Solution
+ * @author Aly Khan Nuruddin
+ */
+
 // Pin definitions for the LEDs
 #define BLUE_LED_PIN 8       // Blue LED indicates cold weather
 #define GREEN_LED_PIN 5      // Green LED indicates moderate weather

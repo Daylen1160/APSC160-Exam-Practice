@@ -1,3 +1,9 @@
+/**
+ * @file solution.ino
+ * @brief POT LED Sequence Solution
+ * @author Aly Khan Nuruddin
+ */
+
 #define SIZE 6                       // Number of LEDs in the sequence
 #define POT A0                        // Analog pin connected to the potentiometer
 

@@ -1,10 +1,17 @@
+/**
+ * @file solution.h
+ * @brief Password Validation Solution
+ * @author Daylen Chun
+ */
+
 #include <ctype.h>
 #include <string.h>
 #include <stdbool.h>
+int passwordStrengthValidator(char password[]);
 
 /**
- * Validates the strength of a given password.
- * @param password The password string to validate
+ * @brief Validate the strength of a given password
+ * @param[in] password   The password string to validate
  * @return An integer strength score based on the criteria met
  */
 int passwordStrengthValidator(char password[]) {
@@ -12,7 +19,6 @@ int passwordStrengthValidator(char password[]) {
     if (length < 8) {
         return 0;
     }
-
     int strength = 1;
     int hasUpper = 0;
     int hasLower = 0;
@@ -28,11 +34,11 @@ int passwordStrengthValidator(char password[]) {
                 hasUpper++;
             }
         } if (islower(password[i])) {
-            hasLower++; 
+            hasLower++;
             if (hasLower == 1) {
                 strength++;
                 hasLower++;
-            }  
+            }
         } if (isalpha(password[i])) {
             hasAlpha++;
             if (hasAlpha == 2) {

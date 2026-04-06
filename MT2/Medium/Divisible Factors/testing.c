@@ -1,5 +1,5 @@
 // Change this to either "template.h" or "solution.h" to test
-#include "template.h"
+#include "solution.h"
 
 // DO NOT TOUCH ANYTHING BELOW THIS LINE
 #include <stdio.h>

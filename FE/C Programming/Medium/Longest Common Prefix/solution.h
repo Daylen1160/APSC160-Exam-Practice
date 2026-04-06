@@ -1,24 +1,27 @@
+/**
+ * @file solution.h
+ * @brief Longest Common Prefix Solution
+ * @author Daylen Chun
+ */
+
 #include <stdbool.h>
-
 #define MAX_WORD_LENGTH 100
-
 int longestCommonPrefix(char strs[][MAX_WORD_LENGTH], int strsLength, char longestPrefix[]);
 
 /**
- * Finds the longest common prefix among an array of strings.
- * @param strs An array of strings
- * @param strsLength The number of strings in the array
- * @param longestPrefix [out] The longest common prefix found
+ * @brief Find the longest common prefix among an array of strings
+ * @param[in] strs           Array of strings
+ * @param[in] strsLength     The number of strings in the array
+ * @param[out] longestPrefix The longest common prefix found
+ * @return The length of the longest common prefix
  */
 int longestCommonPrefix(char strs[][MAX_WORD_LENGTH], int strsLength, char longestPrefix[]) {
     if (strsLength == 0) {
         longestPrefix[0] = '\0';
         return 0;
     }
-
     int prefixLength = 0;
     bool mismatchFound = false;
-
     while (!mismatchFound) {
         char currentChar = strs[0][prefixLength];
         if (currentChar == '\0') {
@@ -34,7 +37,6 @@ int longestCommonPrefix(char strs[][MAX_WORD_LENGTH], int strsLength, char longe
             prefixLength++;
         }
     }
-
     longestPrefix[prefixLength] = '\0';
     return prefixLength;
-} 
+}

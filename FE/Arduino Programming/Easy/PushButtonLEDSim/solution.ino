@@ -1,3 +1,9 @@
+/**
+ * @file solution.ino
+ * @brief Push Button LED Simulation Solution
+ * @author Aly Khan Nuruddin
+ */
+
 #define LED_BLUE 13        // Blue LED connected to digital pin 13
 #define LED_GREEN 7        // Green LED connected to digital pin 7
 

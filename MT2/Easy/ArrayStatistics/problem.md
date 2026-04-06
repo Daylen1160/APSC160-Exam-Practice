@@ -1,6 +1,7 @@
 # 🟢 Array Statistics
 
-**Recommended Time:** 5 - 10 min <br>
+**Recommended Time:** 5 - 10 min
+
 **Topics:** Arrays, Functions, Loops, Control
 
 ## Description

@@ -1,3 +1,9 @@
+/**
+ * @file solution.ino
+ * @brief Dual Seven Segment Display Solution
+ * @author Aly Khan Nuruddin
+ */
+
 #define numLEDs 8
 
 // LED pins for Display 0

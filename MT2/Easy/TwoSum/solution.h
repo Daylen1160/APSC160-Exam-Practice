@@ -1,14 +1,19 @@
-#include <stdio.h>
+/**
+ * @file solution.h
+ * @brief Two Sum Solution
+ * @author Daylen Chun
+ */
 
+#include <stdio.h>
 int twoSum(int[], int, int);
 
 /**
- * @param: nums[] - array of ints
- * @param: numsSize - size of nums[]
- * @param: target - the value to add up to
- * @returns: the sum of the indexes in nums that add up to target, otherwise -1 if no possible sums
- * */
-
+ * @brief Find the smallest sum of indices where two values equal target
+ * @param[in] nums       Array of integers
+ * @param[in] numsSize   Size of the array
+ * @param[in] target     The target sum value
+ * @return The sum of indices where nums[i] + nums[j] == target, or -1 if not found
+ */
 int twoSum (int nums[], int numsSize, int target) {
     int smallestIndexSum = -1;
     for (int i = 0; i < numsSize-1; i++) {
@@ -22,4 +27,3 @@ int twoSum (int nums[], int numsSize, int target) {
     }
     return smallestIndexSum;
 }
-

@@ -1,3 +1,9 @@
+/**
+ * @file solution.ino
+ * @brief Simon Game Solution
+ * @author Aly Khan Nuruddin
+ */
+
 // Number of buttons and LEDs in the game
 #define NUM_COMPONENTS 4
 

@@ -1,29 +1,31 @@
+/**
+ * @file solution.h
+ * @brief License Plate Generator Solution
+ * @author Daylen Chun
+ */
+
 #define NUMPLATES 5
 #define PLATELENGTH 8
 #define NUMLETTERS 3
 #define NUMDIGITS 3
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
 #include <time.h>
-
 bool checkUniqueLetters(char letters[][NUMLETTERS+1], int currentIndex);
 bool checkUniqueDigits(char digits[][NUMDIGITS+1], int currentIndex);
 
 /**
- * Generates 5 unique license plates in the format "LLL-DDD"
- * @param licensePlates A 2D array to store the generated license plates
+ * @brief Generate 5 unique license plates in the format "LLL-DDD"
+ * @param[out] licensePlates 2D array to store the generated license plates
  * @modifies licensePlates with generated plates
  */
 void licensePlateGenerator(char licensePlates[][PLATELENGTH]) {
     char letters[NUMPLATES][NUMLETTERS+1];
     char digits[NUMPLATES][NUMDIGITS+1];
-
     srand(time(NULL));
-
     for (int i = 0; i < NUMPLATES; i++) {
         // Generate 3 random uppercase letters
         for (int j = 0; j < NUMLETTERS; j++) {
@@ -36,7 +38,6 @@ void licensePlateGenerator(char licensePlates[][PLATELENGTH]) {
             }
             letters[i][NUMLETTERS] = '\0';
         }
-
         // Generate 4 random digits
         for (int j = 0; j < NUMDIGITS; j++) {
             digits[i][j] = rand() % (57 - 48 + 1) + 48;
@@ -48,7 +49,6 @@ void licensePlateGenerator(char licensePlates[][PLATELENGTH]) {
             }
             digits[i][NUMDIGITS] = '\0';
         }
-
         // Using string.h functions
         strcpy(licensePlates[i], letters[i]);
         strcat(licensePlates[i], "-");
@@ -58,6 +58,12 @@ void licensePlateGenerator(char licensePlates[][PLATELENGTH]) {
     }
 }
 
+/**
+ * @brief Check if a letter combination is unique among previous combinations
+ * @param[in] letters      2D array of letter combinations
+ * @param[in] currentIndex Current index to check uniqueness for
+ * @return True if unique, false otherwise
+ */
 bool checkUniqueLetters(char letters[][NUMLETTERS+1], int currentIndex) {
     int unique = true;
     for (int i = 0; i < currentIndex; i++) {
@@ -68,6 +74,12 @@ bool checkUniqueLetters(char letters[][NUMLETTERS+1], int currentIndex) {
     return unique;
 }
 
+/**
+ * @brief Check if a digit combination is unique among previous combinations
+ * @param[in] digits       2D array of digit combinations
+ * @param[in] currentIndex Current index to check uniqueness for
+ * @return True if unique, false otherwise
+ */
 bool checkUniqueDigits(char digits[][NUMDIGITS+1], int currentIndex) {
     int unique = true;
     for (int i = 0; i < currentIndex; i++) {
