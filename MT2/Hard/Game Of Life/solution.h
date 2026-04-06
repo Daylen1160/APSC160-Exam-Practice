@@ -4,6 +4,7 @@
  * @author Daylen Chun
  */
 
+ void gameOfLife(int NUMROWS, int NUMCOLS, int board[][NUMCOLS]);
 void copyBoard(int NUMROWS, int NUMCOLS, int source[][NUMCOLS], int dest[][NUMCOLS]);
 int getLiveNeighbors(int NUMROWS, int NUMCOLS, int board[][NUMCOLS], int row, int col);
 int liveCellNextState(int liveNeighbors);
@@ -13,22 +14,27 @@ int deadCellNextState(int liveNeighbors);
  * @brief Update the board to the next state according to the Game of Life rules
  * @param[in] NUMROWS    Number of rows in the board
  * @param[in] NUMCOLS    Number of columns in the board
+ * @param     board      The game board
  * @modifies board to its next state
  */
 void gameOfLife(int NUMROWS, int NUMCOLS, int board[][NUMCOLS]) {
-    int tempBoard[NUMROWS][NUMCOLS];
-    copyBoard(NUMROWS, NUMCOLS, board, tempBoard);
+    int originalBoard[NUMROWS][NUMCOLS];
+    int nextBoard[NUMROWS][NUMCOLS];
+
+    copyBoard(NUMROWS, NUMCOLS, board, originalBoard);
+
     for (int i = 0; i < NUMROWS; i++) {
         for (int j = 0; j < NUMCOLS; j++) {
-            int liveNeighbors = getLiveNeighbors(NUMROWS, NUMCOLS, board, i, j);
-            if (board[i][j] == 1) {
-                tempBoard[i][j] = liveCellNextState(liveNeighbors);
+            int liveNeighbors = getLiveNeighbors(NUMROWS, NUMCOLS, originalBoard, i, j);
+            if (originalBoard[i][j] == 1) {
+                nextBoard[i][j] = liveCellNextState(liveNeighbors);
             } else {
-                tempBoard[i][j] = deadCellNextState(liveNeighbors);
+                nextBoard[i][j] = deadCellNextState(liveNeighbors);
             }
         }
     }
-    copyBoard(NUMROWS, NUMCOLS, tempBoard, board);
+
+    copyBoard(NUMROWS, NUMCOLS, nextBoard, board);
 }
 
 /**
@@ -88,11 +94,12 @@ int deadCellNextState(int liveNeighbors) {
  * @param[in] NUMCOLS    Number of columns in the board
  * @param[in] source     The source board to copy from
  * @param[out] dest      The destination board to copy to
+ * @modifies dest to contain the values in source
  */
 void copyBoard(int NUMROWS, int NUMCOLS, int source[][NUMCOLS], int dest[][NUMCOLS]) {
-    for (int i = 0; i < NUMROWS; i++) {
-        for (int j = 0; j < NUMCOLS; j++) {
-            dest[i][j] = source[i][j];
+    for (int row = 0; row < NUMROWS; row++) {
+        for (int col = 0; col < NUMCOLS; col++) {
+            dest[row][col] = source[row][col];
         }
     }
 }

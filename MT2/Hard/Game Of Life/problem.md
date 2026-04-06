@@ -41,7 +41,7 @@ Output: [[1,1],[1,1]]
 
 ## Hints:
 - I would strongly recommend making helper functions. Here are the ones I used:
-    - `copyBoard`: Copies a matrix to another matrix
+    - `copyBoard`: Copies a matrix to another matrix. This will be useful for making a copy of the original board to reference when updating the board in-place, and also for copying the modified/updated board back to the original board at the end.
     - `getLiveNeighbors`: Gets the number of live neighbors next to the current cell
     - `liveCellNextState`: Determines the next state of a live cell based on the number of alive neighbors
     - `deadCellNextState`: Determines the next state of a dead cell based on the number of alive neighbors
