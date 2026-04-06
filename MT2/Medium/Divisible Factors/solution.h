@@ -5,7 +5,9 @@
  */
 
 #include <stdio.h>
+
 #define fileName "factors.txt"
+
 int divisible_factors(int n, int d, int output_array[]);
 
 /**
