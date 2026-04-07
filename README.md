@@ -129,6 +129,7 @@ If you want additional tips/insights or anything else, email dchun924@student.ub
 Updates to the repository can be found at `CHANGELOG.md`. Be sure to check there every now and then so you know whether to refresh the repository or not. I'll announce a Piazza statement if it's important too.
 
 - Create MT1 Problems
-- Make user I/O problems
-- Move to PL
+- Add more MT2 Problems for Medium and maybe Hard
+- Add personal solution to Aly's Hard Problems
+- Add more user I/O Problems
 - Add comments to solutions (maybe?)

@@ -108,4 +108,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Credits for problems
 
+## [3.0.0] - 2026-04-07
+
+### Added
+- Set Matrix Zeroes in MT2/Hard
+- Aly String & Random problem set
+
+### Changed
+- Doxygen format for all problems
+- Updated documentation in README.md
+- Updated documentation in problem.md files to include credits and ASCII table for relevant problems
+- New Tags
+
  
