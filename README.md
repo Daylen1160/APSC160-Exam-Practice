@@ -84,13 +84,14 @@ In the `problem.md` file, there is a template to TinkerCAD. Complete the program
 ## Topics Covered
 
 ### MT2:
-- **C Programming**
-    - Fundamentals
+- **C Programming**        
     - User I/O
+    - Branching
+    - Loops
     - File I/O
-    - Control
     - Functions
-    - Arrays (1D & 2D)
+    - 1D Arrays
+    - 2D Arrays
 
 ### FE:
 - **C Programming**
