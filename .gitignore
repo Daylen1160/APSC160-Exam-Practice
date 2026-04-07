@@ -38,7 +38,12 @@
 *.i*86
 *.x86_64
 *.hex
+
+# I/O
 *output/
+*input/
+input.txt
+output.txt
 
 # Debug files
 *.dSYM/
