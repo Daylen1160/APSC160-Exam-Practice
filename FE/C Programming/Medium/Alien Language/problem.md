@@ -2,7 +2,7 @@
 
 **Recommended Time:** 10 - 30 min
 
-**Topics:** File I/O, Strings, Characters, Encoding
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array, Files I/O, String
 
 ## Description
 
@@ -51,3 +51,5 @@ Explanation:
 - The length of the string is 53, which is the ASCII value for '5'
 - Spaces and punctuation is the same
 ```
+
+

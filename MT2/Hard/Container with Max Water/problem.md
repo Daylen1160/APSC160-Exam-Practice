@@ -1,13 +1,13 @@
-# 🔴Container With Max Water
+# 🔴 Container With Max Water
 
 **Recommended Time:** 30 - 45 min
 
-**Topics:** Arrays, Loops, Control
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array
 
 ## Description
 You are given an integer array `height` of length `heightSize`. There are `heightSize` vertical lines drawn such that the two endpoints of the i-th line are `(i, 0)` and `(i, height[i])`.
 
-Find two lines that together with the x-axis form a container, such that the container contains the most water. You may not slant the container — the sides must be vertical at indices i and j.
+Find two lines that together with the x-axis form a container, such that the container contains the most water. You may not slant the container â€” the sides must be vertical at indices i and j.
 
 ## Constraints
 - `0 <= i < j < heightSize` (indices are integer positions along the x-axis)
@@ -39,8 +39,8 @@ Explanation: Only two lines, area = (1 - 0) * min(1,1) = 1.
 
 **Hints:**
 - There are two common approaches:
-  - Brute force: try all pairs `(i, j)` and compute area — O(n^2).
-  - Two-pointer: start with left=0 and right=heightSize-1, compute area, then move the pointer at the shorter line inward — O(n).
+  - Brute force: try all pairs `(i, j)` and compute area â€” O(n^2).
+  - Two-pointer: start with left=0 and right=heightSize-1, compute area, then move the pointer at the shorter line inward â€” O(n).
 - I would advise to program the brute force method first, get that working, and then get the two-pointer solution. Getting both solutions working is STRONGLY recommended.
 - It is optional to use the `math.h` library, but you might find the `fmin` and `fmax` functions useful:
   - `double fmax(double num1, double num2)`: Returns the larger of the two doubles. It can be used with integers as well.
@@ -49,3 +49,5 @@ Explanation: Only two lines, area = (1 - 0) * min(1,1) = 1.
 ## Credits
 
 https://leetcode.com/problems/container-with-most-water/
+
+

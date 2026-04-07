@@ -2,7 +2,7 @@
 
 **Recommended Time:** 5 - 10 min
 
-**Topics:** Strings, Loops, Arrays, Boolean Logic
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array, String
 
 ## Description
 Write a function named `isPalindrome` that determines whether a given string is a palindrome. A palindrome is a sequence of characters that reads the same forward and backward.
@@ -47,3 +47,5 @@ Output: 1
 ## Notes
 
 The `template.c` file has no template
+
+

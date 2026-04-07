@@ -2,7 +2,7 @@
 
 **Recommended Time:** 30 - 40 min
 
-**Topics:** Strings, Library Functions, Random Numbers
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array, 2D Array, Files I/O, String, Random
 
 ## Description
 Write a C program that implements a word-reordering puzzle.
@@ -25,3 +25,5 @@ Output: Correct Guess: the cat ate my homework
 Input: reading am I book a (Jumbled)
 Output: Correct Guess: i am reading a book
 ```
+
+

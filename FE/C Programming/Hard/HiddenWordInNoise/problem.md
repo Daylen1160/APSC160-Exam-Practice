@@ -2,7 +2,7 @@
 
 **Recommended Time:** 30 - 40 min
 
-**Topics:** Arrays, Control Structures (Loops), String Manipulation
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array, Files I/O, String, Random
 
 ## Description
 Write a C program that embeds a hidden word within a long string of random lowercase letters.
@@ -29,3 +29,5 @@ Output: Correct Guess: cat
 Input: mznxqowlkbuterflyprqvmaopstlxq
 Output: Correct Guess: fly
 ```
+
+

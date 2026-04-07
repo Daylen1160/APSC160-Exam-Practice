@@ -2,7 +2,7 @@
 
 **Recommended Time:** 10 - 15 min
 
-**Topics:** Strings, Control Structures (Loops), Random Numbers
+**Topics:** Branching, Loops, Functions, 1D Array, Files I/O, String
 
 ## Description
 Write a C program that performs the following steps:
@@ -38,3 +38,4 @@ To convert a character digit (e.g., '3') to its integer value (3), you can add o
 char digitChar = '3';
 int digitValue = digitChar - '0';
 ```
+

@@ -3,7 +3,7 @@
 
 **Recommended Time:** 10 - 20 min
 
-**Topics:** Strings, Arrays
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array, 2D Array, String
 
 ## Description
 
@@ -37,5 +37,7 @@ Modifies: ""
 Output: 0
 Explanation: There is no common prefix among the input strings.
 ```
+
+
 
 

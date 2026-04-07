@@ -2,7 +2,7 @@
 
 **Recommended Time:** 25 - 30 min
 
-**Topics:** Loops, Characters, Random Numbers
+**Topics:** Branching, Loops, Functions, 1D Array, Files I/O, String
 
 ## Description
 Write a C program that executes a simple guessing game:
@@ -33,3 +33,5 @@ Output:
 Most frequent character: z, e
 Frequency: 5
 ```
+
+

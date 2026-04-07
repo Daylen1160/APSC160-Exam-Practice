@@ -2,7 +2,7 @@
 
 **Recommended Time:** 5 - 10 min
 
-**Topics:** Arrays, Functions, Loops, Control
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array
 
 ## Description
 Given an array of integers `nums`, complete the 3 methods to:
@@ -28,3 +28,4 @@ Output:
 3
 Explanation: 1 + 2 + 3 + 4 + 5 = 15. The average of those values is 3. 3, 4, and 5 are greater than or equal to 3, so we return 3.
 ```
+

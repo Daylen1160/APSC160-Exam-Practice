@@ -2,7 +2,7 @@
 
 **Recommended Time:** 15 - 25 min
 
-**Topics:** Strings, Characters, Logic
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array, String
 
 ## Description
 
@@ -88,3 +88,5 @@ Explanation:
 - Contains special character (1 char < 5, no bonus)
 - Total: 5
 ```
+
+

@@ -2,7 +2,7 @@
 
 **Recommended Time:** 5 - 10 min
 
-**Topics:** 2D Arrays/Matrices, Loops, Control
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array, 2D Array
 
 ## Description
 You are given an `m x n` integer grid `accounts` where `accounts[i][j]` is the amount of money the `i`-th customer has in the `j`-th bank. Return the wealth that the richest customer has.
@@ -44,3 +44,5 @@ Output: 17
 ## Credits
 
 https://leetcode.com/problems/richest-customer-wealth/
+
+

@@ -2,7 +2,7 @@
 
 **Recommended Time:** 30 - 45 min
 
-**Topics:** 2D Arrays/Matricies, Nested loops
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array, 2D Array
 
 ## Description
 
@@ -19,14 +19,14 @@ The next state of the board is determined by applying the above rules simultaneo
 ## Input / Output
 
 - **Input:** `int NUMROWS`, `int NUMCOLS`, `int board[][]`
-- **Output:** Modify `board` in-place to represent the next state according to the rules above.
+- **Modifies:** `board` in-place to represent the next state according to the rules above.
 
 ## Examples
 
 
 ```text
 Input: 4, 3, [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
-Output: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
+Modified Matrix: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
 ```
 
 ![Board1](../../../img/board1.jpg "Board1")
@@ -34,7 +34,7 @@ Output: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
 
 ```text
 Input: 2, 2, [[1,1],[1,0]]
-Output: [[1,1],[1,1]]
+Modified Matrix: [[1,1],[1,1]]
 ```
 
 ![Board2](../../../img/board2.jpg "Board2")
@@ -50,4 +50,6 @@ Output: [[1,1],[1,1]]
 ## Credits
 
 https://leetcode.com/problems/game-of-life/
+
+
 

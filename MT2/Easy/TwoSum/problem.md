@@ -2,7 +2,7 @@
 
 **Recommended Time:** 5-10 min 
 
-**Topics:** Arrays, Loops, Control
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array
 
 ## Description
 Given an array of integers `nums` and an integer `target`, return the sum of the **two indices** of the two numbers such that they add up to `target`.
@@ -44,3 +44,4 @@ Output: -1
 ## Credits
 
 https://leetcode.com/problems/two-sum/
+

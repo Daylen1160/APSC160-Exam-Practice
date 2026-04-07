@@ -2,7 +2,7 @@
 
 **Recommended Time:** 10 - 15 min
 
-**Topics:** Loops, Control
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array
 
 ## Description
 In Berland it is the holiday of equality. In honor of the holiday the king decided to equalize the welfare of all citizens in Berland at the expense of the state treasury.
@@ -13,7 +13,7 @@ There are `citizensSize` citizens; the welfare of each citizen is given by integ
 - **Input:**
   - `citizens[]`, `citizensSize`
 - **Output:**
-  - Return a single integer `N` — the minimum total number of burles the king has to spend.
+  - Return a single integer `N` â€” the minimum total number of burles the king has to spend.
 
 ## Requirements
 - You may only increase citizens' wealth (add non-negative integers to some entries).
@@ -68,3 +68,4 @@ Explanation: All citizens already have 12 burles; no spending required.
 ## Credits
 
 https://codeforces.com/problemset/problem/758/A
+

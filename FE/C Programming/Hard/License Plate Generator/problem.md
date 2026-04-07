@@ -2,7 +2,7 @@
 
 **Recommended Time:** 20 - 45 min
 
-**Topics:** 2D Arrays, Strings, Random Numbers, Characters
+**Topics:** Branching, Loops, User I/O, Functions, 1D Array, 2D Array, String, Random
 
 ## Description
 Write a C function that generates 5 random vehicle license plates and stores them in a 2D array. Each license plate must strictly follow the format `LLL-###`, where:
@@ -32,3 +32,5 @@ You must also check that no two license plates contain the same set of letters o
 - The digit combination (e.g., "123") must be unique across all 5 plates.
 - A plate like "ABC-999" would be invalid if "ABC" was already used in a previous plate.
 - A plate like "ZZZ-123" would be invalid if "123" was already used in a previous plate.
+
+
