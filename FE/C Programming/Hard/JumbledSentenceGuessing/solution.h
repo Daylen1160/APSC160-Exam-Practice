@@ -11,11 +11,12 @@
 #define NUM_SENTENCES 4
 #define WORDS 5
 #define MAX_LEN 200
+#define WORD_MAX 50
 
 // ------------------------------------------------------------
 // Manually split a sentence into 5 words without strtok()
 // ------------------------------------------------------------
-void split_into_words(const char *sentence, char words[][50]) {
+void split_into_words(char sentence[], char words[][WORD_MAX]) {
     int w = 0;      // index of current word
     int c = 0;      // index inside a word
 
@@ -35,22 +36,22 @@ void split_into_words(const char *sentence, char words[][50]) {
 // ------------------------------------------------------------
 // Shuffle the 5 words using Fisher–Yates algorithm
 // ------------------------------------------------------------
-void shuffle_words(char words[][50]) {
+void shuffle_words(char words[][WORD_MAX]) {
     for (int i = WORDS - 1; i > 0; i--) {
         int j = rand() % (i + 1);
 
-        char temp[50];
+        char temp[WORD_MAX];
         strcpy(temp, words[i]);
         strcpy(words[i], words[j]);
         strcpy(words[j], temp);
     }
 }
 
-int main() {
+int main(void) {
     srand(time(NULL));   // seed randomness once
 
     // Exactly 5-word sentences
-    const char sentences[][MAX_LEN] = {
+    char sentences[NUM_SENTENCES][MAX_LEN] = {
         "the children are playing outside",
         "the cat ate my homework",
         "i am reading a book",
@@ -59,11 +60,11 @@ int main() {
 
     // Randomly select a sentence
     int idx = rand() % NUM_SENTENCES;
-    const char original_sentence;
+    char original_sentence[MAX_LEN];
     strcpy(original_sentence, sentences[idx]);
 
     // Split selected sentence into words
-    char words[WORDS][50];
+    char words[WORDS][WORD_MAX];
     split_into_words(original_sentence, words);
 
     // Shuffle them

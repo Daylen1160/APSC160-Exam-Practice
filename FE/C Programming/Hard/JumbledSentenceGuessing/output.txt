@@ -1,0 +1,5 @@
+Jumbled words:
+are outside the children playing 
+
+Enter your guess for the original sentence:
+Correct Guess: "the children are playing outside"
