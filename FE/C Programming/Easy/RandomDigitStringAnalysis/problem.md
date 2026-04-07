@@ -12,6 +12,8 @@ Write a C program that performs the following steps:
 4. Count how many times the user's digit appears within the generated random string.
 5. Output the final count in a clear sentence.
 
+NOTE: Ignore the input.txt and output.txt produced
+
 ## Examples
 ```text
 Input: 10395820495720394855 (Generated)
@@ -27,4 +29,12 @@ Output: Digit 2 appears 5 times.
 Input: 31415926535897932384 (Generated)
 Digit: 0
 Output: Digit 0 appears 0 times.
+```
+
+## Hint:
+
+To convert a character digit (e.g., '3') to its integer value (3), you can add or subtract the character '0' from it. For example:
+```c
+char digitChar = '3';
+int digitValue = digitChar - '0';
 ```

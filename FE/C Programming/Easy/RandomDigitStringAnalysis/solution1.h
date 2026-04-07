@@ -1,5 +1,5 @@
 /**
- * @file solution.h
+ * @file solution1.h
  * @brief Random Digit String Analysis Solution
  * @author Aly Khan Nuruddin
  */
