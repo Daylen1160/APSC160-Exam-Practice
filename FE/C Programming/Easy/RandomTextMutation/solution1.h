@@ -1,7 +1,7 @@
 /**
- * @file solution.h
+ * @file solution1.h
  * @brief Random Text Mutation Solution
- * @author Aly Khan Nuruddin
+ * @author Aly Khan Nuruddin and Daylen Chun
  */
 #include <stdio.h>    // For standard input/output (printf, scanf)
 #include <stdlib.h>   // For random functions (rand, srand)
@@ -34,27 +34,23 @@ int main() {
 
     // --- 1. Get User Input ---
     while (valid == 0) {                   // loop until valid input
-        printf("Enter a single lowercase word (max %d characters): ", MAX_LENGTH - 1);
 
         /* Read into the large buffer. Using a width prevents buffer overflow. */
         if (scanf("%1000s", input_string) != 1) {
-            printf("Error reading input.\n");
+            printf("Error. reading input.\n");
             return 1;
         }
 
         /* Use strnlen to measure the actual entered length safely. */
         int len = strnlen(input_string, sizeof(input_string));
 
-        /* Check for empty input. */
-        if (len == 0) {
-            printf("No characters provided. Please try again.\n");
-        }
-
         /* If length exceeds allowed (50), report and prompt again. */
-        else if (len > (MAX_LENGTH - 1)) {
-            printf("String exceeds maximum character limit. Please try again.\n");
-            
-            /* Input is valid */
+        if (len > (MAX_LENGTH - 1)) {
+            printf("Error. String exceeds maximum character limit. Please try again.\n");
+        } 
+        
+        /* Input is valid */
+        else {
             valid = 1;
         }
     }
@@ -66,28 +62,23 @@ int main() {
     // 1: Replace Random with '*'
     // 2: Swap First and Last
     int mutation_choice = rand() % 3;
-    
-    printf("\nOriginal string: %s\n", input_string);
-    
+        
     // --- 3. Apply Selected Mutation ---
 
     if (mutation_choice == 0) {
-        printf("Applying Mutation: Uppercase Random Character\n");
         uppercaseRandom(input_string);
         
     } else if (mutation_choice == 1) {
-        printf("Applying Mutation: Replace Random Character with '*'\n");
         replaceRandom(input_string);
         
     } else {
-        printf("Applying Mutation: Swap First and Last Characters\n");
         swapEnds(input_string);
         
     }
 
     // --- 4. Print Result ---
     
-    printf("Mutated string: %s\n", input_string);
+    printf("%s\n", input_string);
 
     return 0;
 }
