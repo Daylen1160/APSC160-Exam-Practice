@@ -4,21 +4,21 @@
  * @author Daylen Chun
  */
 
-#include <stdbool.h>
 #include <string.h>
-bool isPalindrome(char word[]);
+
+int isPalindrome(char word[]);
 
 /**
  * @brief Check if a given word is a palindrome
  * @param[in] word       The input string to check
- * @return true if the word is a palindrome, false otherwise
+ * @return 1 if the word is a palindrome, 0 otherwise
  */
-// Note: My solution uses bool, but you can also use an int with 1 as true and 0 as false
-bool isPalindrome(char word[]) {
-    bool isPalin = true;
-    for (int i = 0; i < strlen(word) / 2; i++) {
-        if (word[i] != word[strlen(word) - 1 - i]) {
-            isPalin = false;
+int isPalindrome(char word[]) {
+    int isPalin = 1;
+    size_t wordLength = strlen(word);
+    for (size_t i = 0; i < wordLength / 2; i++) {
+        if (word[i] != word[wordLength - 1 - i]) {
+            isPalin = 0;
         }
     }
     return isPalin;

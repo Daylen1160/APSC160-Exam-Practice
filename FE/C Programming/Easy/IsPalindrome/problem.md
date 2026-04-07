@@ -9,39 +9,39 @@ Write a function named `isPalindrome` that determines whether a given string is 
 
 Treat the input exactly as given (case-sensitive). For example, `"Racecar"` is *not* a palindrome unless the case matches exactly.
 
-`isPalindrome` is expected to take in one string as its argument
+`isPalindrome` is expected to take in one string as its argument and return `1` for a palindrome or `0` otherwise.
 
 ## Input/Output
-- Input: [You need to figure this out]
-- Output: `true` if the word passed in is a palindrome, `false` otherwise.
+- Input: a string
+- Output: `1` if the word passed in is a palindrome, `0` otherwise.
 
 ## Examples
 
 ```text
 Input: "radar"
-Output: true
+Output: 1
 Explanation: radar spelled backwards is radar
 ```
 ```
 Input: "hello"
-Output: false
+Output: 0
 ```
 ```
 Input: ""
-Output: true
+Output: 1
 ```
 ```
 Input: "a"
-Output: true
+Output: 1
 ```
 ```
 Input: "Racecar"
-Output: false
+Output: 0
 Explanation: Case sensitivity
 ```
 ```
 Input: "racecar"
-Output: true
+Output: 1
 ```
 
 ## Notes
