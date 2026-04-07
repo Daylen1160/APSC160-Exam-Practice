@@ -2,7 +2,7 @@
 
 **Recommended Time:** 30 - 45 min
 
-**Topics:** Branching, Loops, User I/O, Functions, 1D Array, 2D Array
+**Topics:** Branching, Loops, Functions, 1D Array, 2D Array
 
 ## Description
 Given an `m x n` integer matrix, if an element is `0`, set its entire row and column to `0`.

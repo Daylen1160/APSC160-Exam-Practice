@@ -2,7 +2,7 @@
 
 **Recommended Time:** 25 - 30 min
 
-**Topics:** Branching, Loops, Functions, 1D Array, Files I/O, String
+**Topics:** Branching, Loops, Functions, 1D Array, Files I/O, String, User I/O
 
 ## Description
 Write a C program that executes a simple guessing game:

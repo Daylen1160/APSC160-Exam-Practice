@@ -2,7 +2,7 @@
 
 **Recommended Time:** 5 - 10 min
 
-**Topics:** Branching, Loops, User I/O, Functions, 1D Array
+**Topics:** Branching, Loops, Functions, 1D Array
 
 ## Description
 Given an array of integers `nums`, complete the 3 methods to:

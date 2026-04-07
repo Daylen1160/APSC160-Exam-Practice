@@ -2,7 +2,7 @@
 
 **Recommended Time:** 15 - 45 min
 
-**Topics:** Branching, Loops, User I/O, Functions, 1D Array, Files I/O, String
+**Topics:** Branching, Loops, Functions, 1D Array, Files I/O, String
 
 ## Description
 Read numbers from a file in a 2-column format. Based on whether a given number `evenOrOdd` is even or odd:
@@ -15,9 +15,9 @@ If the file you try to read from is non-existent, print an error message and exi
 
 ## Input / Output
 - **Input:** 
-  - `char fileName[]` â€” the name of the file to read from.
-  - `int fileRows` â€” the number of rows in the file.
-  - `int evenOrOdd` â€” a number whose parity determines which column to read.
+  - `char fileName[]` Ã¢â‚¬â€ the name of the file to read from.
+  - `int fileRows` Ã¢â‚¬â€ the number of rows in the file.
+  - `int evenOrOdd` Ã¢â‚¬â€ a number whose parity determines which column to read.
 - **Output:** 
   - Return the minimum number of elements to remove so that all remaining elements are equal.
 

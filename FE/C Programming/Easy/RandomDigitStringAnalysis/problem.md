@@ -2,7 +2,7 @@
 
 **Recommended Time:** 10 - 15 min
 
-**Topics:** Branching, Loops, Functions, 1D Array, Files I/O, String
+**Topics:** Branching, Loops, Functions, 1D Array, Files I/O, String, User I/O
 
 ## Description
 Write a C program that performs the following steps:

@@ -3,7 +3,7 @@
 
 **Recommended Time:** 10 - 20 min
 
-**Topics:** Branching, Loops, User I/O, Functions, 1D Array, 2D Array, String
+**Topics:** Branching, Loops, Functions, 1D Array, 2D Array, String
 
 ## Description
 

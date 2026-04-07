@@ -2,7 +2,7 @@
 
 **Recommended Time:** 20 - 45 min
 
-**Topics:** Branching, Loops, User I/O, Functions, 1D Array, 2D Array, String, Random
+**Topics:** Branching, Loops, Functions, 1D Array, 2D Array, String, Random
 
 ## Description
 Write a C function that generates 5 random vehicle license plates and stores them in a 2D array. Each license plate must strictly follow the format `LLL-###`, where:
