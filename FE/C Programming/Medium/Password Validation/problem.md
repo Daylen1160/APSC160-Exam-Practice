@@ -33,7 +33,6 @@ Alongside all the other ctype functions you should know for the exam, you need t
 
 Returns true if the character is a digit, false otherwise
 
-<br>
 
 `bool isalpha(char cr)`
 

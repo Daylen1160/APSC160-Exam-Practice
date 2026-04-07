@@ -14,22 +14,27 @@ Write a C program that executes a simple guessing game:
 
 Note: In case of a tie, any of the correct letters provided would be sufficient.
 
+## ASCII Table
+![ASCII_table](../../../../img/ascii.gif "ASCII_table")
+
 ## Examples
 ```text
 Sequence: kllkjhgfdrtkuiolkjhh
-Output:
-Most frequent character: k
-Frequency: 4
+User guess: k 4
+Output: You Win!
 ```
 ```text
-Input: abcdegghhijjkklmmopprr
-Output:
-Most frequent character: g,h,j,k,m,p,r
-Frequency: 2
+Sequence: abcdegghhijjkklmmopprr
+User guess: a 2
+Output: Incorrect guess. Try again.
+User guess: g 2
+Output: You Win!
 ```
 ```text
-Input: zzzzaaabbbccddddeeeeef
-Output:
-Most frequent character: z, e
-Frequency: 5
+Sequence: zzzzaaabbbccddddeeeeef
+User guess: e 5
+Output: You Win!
+
+Explanation: Both 'z' and 'e' are tied for most frequent at 5,
+so either letter with frequency 5 is accepted.
 ```
