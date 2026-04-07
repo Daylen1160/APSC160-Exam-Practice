@@ -17,26 +17,27 @@ void setMatrixZeroes(int NUMROWS, int NUMCOLS, int matrix[][NUMCOLS]) {
     int zeroRows[NUMROWS];
     int zeroCols[NUMCOLS];
 
-    for (int r = 0; r < NUMROWS; r++) {
-        zeroRows[r] = 0;
-    }
-    for (int c = 0; c < NUMCOLS; c++) {
-        zeroCols[c] = 0;
+    for (int i = 0; i < NUMROWS; i++) {
+        zeroRows[i] = 0;
     }
 
-    for (int r = 0; r < NUMROWS; r++) {
-        for (int c = 0; c < NUMCOLS; c++) {
-            if (matrix[r][c] == 0) {
-                zeroRows[r] = 1;
-                zeroCols[c] = 1;
+    for (int j = 0; j < NUMCOLS; j++) {
+        zeroCols[j] = 0;
+    }
+
+    for (int i = 0; i < NUMROWS; i++) {
+        for (int j = 0; j < NUMCOLS; j++) {
+            if (matrix[i][j] == 0) {
+                zeroRows[i] = 1;
+                zeroCols[j] = 1;
             }
         }
     }
 
-    for (int r = 0; r < NUMROWS; r++) {
-        for (int c = 0; c < NUMCOLS; c++) {
-            if (zeroRows[r] == 1 || zeroCols[c] == 1) {
-                matrix[r][c] = 0;
+    for (int i = 0; i < NUMROWS; i++) {
+        for (int j = 0; j < NUMCOLS; j++) {
+            if (zeroRows[i] == 1 || zeroCols[j] == 1) {
+                matrix[i][j] = 0;
             }
         }
     }
