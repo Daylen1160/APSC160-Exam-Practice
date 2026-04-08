@@ -1,4 +1,4 @@
-# 🔴 Game Of Life
+﻿# 🔴 Game Of Life
 
 **Recommended Time:** 30 - 45 min
 
@@ -39,7 +39,7 @@ Modified Matrix: [[1,1],[1,1]]
 
 ![Board2](../../../img/board2.jpg "Board2")
 
-## Hints:
+## Hints
 - I would strongly recommend making helper functions. Here are the ones I used:
     - `copyBoard`: Copies a matrix to another matrix. This will be useful for making a copy of the original board to reference when updating the board in-place, and also for copying the modified/updated board back to the original board at the end.
     - `getLiveNeighbors`: Gets the number of live neighbors next to the current cell

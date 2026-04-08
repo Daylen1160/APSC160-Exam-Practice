@@ -1,4 +1,4 @@
-# 🔴 Container With Max Water
+﻿# 🔴 Container With Max Water
 
 **Recommended Time:** 30 - 45 min
 
@@ -35,13 +35,11 @@ Explanation: Only two lines, area = (1 - 0) * min(1,1) = 1.
 ```
 
 
----
-
-**Hints:**
-- There are two common approaches:
-  - Brute force: try all pairs `(i, j)` and compute area Ã¢â‚¬â€ O(n^2).
-  - Two-pointer: start with left=0 and right=heightSize-1, compute area, then move the pointer at the shorter line inward Ã¢â‚¬â€ O(n).
-- I would advise to program the brute force method first, get that working, and then get the two-pointer solution. Getting both solutions working is STRONGLY recommended.
+## Hints
+- There are two approaches:
+  - Brute force `O(n^2)`: try all pairs `(i, j)` and compute area.
+  - Two-pointer `O(n)`: start with left = 0 and right = heightSize-1, compute area, then move the pointer at the shorter line inward.
+- I would advise to program the brute force method first, get that working, and then get the two-pointer solution. Getting both solutions working is VERY STRONGLY recommended.
 - It is optional to use the `math.h` library, but you might find the `fmin` and `fmax` functions useful:
   - `double fmax(double num1, double num2)`: Returns the larger of the two doubles. It can be used with integers as well.
   - `double fmin(double num1, double num2)`: Returns the smaller of the two doubles. It can be used with integers as well.

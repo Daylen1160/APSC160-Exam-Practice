@@ -1,4 +1,4 @@
-# 🔴 License Plate Generator
+﻿# 🔴 License Plate Generator
 
 **Recommended Time:** 20 - 45 min
 
@@ -16,7 +16,6 @@ You must also check that no two license plates contain the same set of letters o
 
 - **Input:** `char licensePlates[][]`
 - **Modify:** `char licensePlates[][]` to contain valid randomized license plates
-- **Output:** N/A
 
 ## ASCII Table
 ![ASCII_table](../../../../img/ascii.gif "ASCII_table")

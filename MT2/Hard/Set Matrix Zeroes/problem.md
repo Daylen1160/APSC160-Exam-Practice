@@ -32,7 +32,7 @@ Modified Matrix: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 
 ![Set Matrix Zeroes Matrix](../../../img/smz2.jpg "Set Matrix Zeroes Matrix 2")
 
-## Hints:
+## Hints
 - It would be helpful to store which rows and columns need to be set to 0.
 
 ## Credits

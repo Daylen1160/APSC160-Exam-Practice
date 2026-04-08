@@ -4,16 +4,18 @@
  * @author Daylen Chun
  */
 
-#define NUMPLATES 5
-#define PLATELENGTH 8
-#define NUMLETTERS 3
-#define NUMDIGITS 3
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
 #include <time.h>
+
+#define NUMPLATES 5
+#define PLATELENGTH 8
+#define NUMLETTERS 3
+#define NUMDIGITS 3
+
 bool checkUniqueLetters(char letters[][NUMLETTERS+1], int currentIndex);
 bool checkUniqueDigits(char digits[][NUMDIGITS+1], int currentIndex);
 
@@ -26,29 +28,36 @@ void licensePlateGenerator(char licensePlates[][PLATELENGTH]) {
     char letters[NUMPLATES][NUMLETTERS+1];
     char digits[NUMPLATES][NUMDIGITS+1];
     srand(time(NULL));
+
     for (int i = 0; i < NUMPLATES; i++) {
         // Generate 3 random uppercase letters
         for (int j = 0; j < NUMLETTERS; j++) {
             letters[i][j] = rand() % (90 - 65 + 1) + 65;
         }
         letters[i][NUMLETTERS] = '\0';
+
+        // Ensure the letters are unique
         while (!checkUniqueLetters(letters, i)) {
             for (int j = 0; j < NUMLETTERS; j++) {
                 letters[i][j] = rand() % (90 - 65 + 1) + 65;
             }
             letters[i][NUMLETTERS] = '\0';
         }
+
         // Generate 4 random digits
         for (int j = 0; j < NUMDIGITS; j++) {
             digits[i][j] = rand() % (57 - 48 + 1) + 48;
         }
         digits[i][NUMDIGITS] = '\0';
+
+        // Ensure the digits are unqiue
         while (!checkUniqueDigits(digits, i)) {
             for (int j = 0; j < NUMDIGITS; j++) {
                 digits[i][j] = rand() % (57 - 48 + 1) + 48;
             }
             digits[i][NUMDIGITS] = '\0';
         }
+
         // Using string.h functions
         strcpy(licensePlates[i], letters[i]);
         strcat(licensePlates[i], "-");
