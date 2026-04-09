@@ -7,7 +7,7 @@
 ## Description
 You are given an integer array `height` of length `heightSize`. There are `heightSize` vertical lines drawn such that the two endpoints of the i-th line are `(i, 0)` and `(i, height[i])`.
 
-Find two lines that together with the x-axis form a container, such that the container contains the most water. You may not slant the container Ã¢â‚¬â€ the sides must be vertical at indices i and j.
+Find two lines that together with the x-axis form a container, such that the container contains the most water. You may not slant the container - the sides must be vertical at indices i and j.
 
 ## Constraints
 - `0 <= i < j < heightSize` (indices are integer positions along the x-axis)

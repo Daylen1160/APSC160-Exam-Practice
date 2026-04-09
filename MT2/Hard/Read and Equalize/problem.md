@@ -15,9 +15,9 @@ If the file you try to read from is non-existent, print an error message and exi
 
 ## Input / Output
 - **Input:** 
-  - `char fileName[]` Ã¢â‚¬â€ the name of the file to read from.
-  - `int fileRows` Ã¢â‚¬â€ the number of rows in the file.
-  - `int evenOrOdd` Ã¢â‚¬â€ a number whose parity determines which column to read.
+  - `char fileName[]` - the name of the file to read from.
+  - `int fileRows` - the number of rows in the file.
+  - `int evenOrOdd` - a number whose parity determines which column to read.
 - **Output:** 
   - Return the minimum number of elements to remove so that all remaining elements are equal.
 

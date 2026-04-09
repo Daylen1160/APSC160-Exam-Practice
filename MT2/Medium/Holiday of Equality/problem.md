@@ -1,4 +1,4 @@
-# 🟡 Holiday of Equality
+﻿# 🟡 Holiday of Equality
 
 **Recommended Time:** 10 - 15 min
 
@@ -13,7 +13,7 @@ There are `citizensSize` citizens; the welfare of each citizen is given by integ
 - **Input:**
   - `citizens[]`, `citizensSize`
 - **Output:**
-  - Return a single integer `N` Ã¢â‚¬â€ the minimum total number of burles the king has to spend.
+  - Return a single integer `N` - the minimum total number of burles the king has to spend.
 
 ## Requirements
 - You may only increase citizens' wealth (add non-negative integers to some entries).

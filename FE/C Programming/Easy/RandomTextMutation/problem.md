@@ -10,7 +10,7 @@ Write a C program that reads a single lowercase word (string) from the user and 
 Note: All mutations must be performed in-place, meaning they do not change the string length.
 
 1. **Uppercase**: Uppercase a random character in the string.
-2. **Replace**: Replace a random character in the string with the literal character Ã¢â‚¬Ëœ*Ã¢â‚¬â„¢
+2. **Replace**: Replace a random character in the string with the literal character '*'
 3. **Swap Ends**: Swap the first and the last characters of the string.
 
 ## Examples
