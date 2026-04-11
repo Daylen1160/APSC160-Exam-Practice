@@ -40,7 +40,7 @@ Output (result): [1,2,3,4,8,12,11,10,9,5,6,7]
 ## Hints
 - Track four boundaries: `top`, `bottom`, `left`, `right`.
 - After each directional traversal, shrink one boundary.
-- Always check boundary validity before traversing the next edge.
+- Be sure to check boundary validity before a traversal (you already traversed it)
 
 ## Credits
 
