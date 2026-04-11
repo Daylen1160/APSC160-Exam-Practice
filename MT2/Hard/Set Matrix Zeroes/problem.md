@@ -20,14 +20,14 @@ You must modify the matrix in-place. This means **you cannot create a copy of th
 
 ```text
 Input: 3, 3, [[1,1,1],[1,0,1],[1,1,1]]
-Modified Matrix: [[1,0,1],[0,0,0],[1,0,1]]
+Modified (matrix): [[1,0,1],[0,0,0],[1,0,1]]
 ```
 
 ![Set Matrix Zeroes Matrix](../../../img/smz1.jpg "Set Matrix Zeroes Matrix 1")
 
 ```text
 Input: 3, 4, [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
-Modified Matrix: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
+Modified (matrix): [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 ```
 
 ![Set Matrix Zeroes Matrix](../../../img/smz2.jpg "Set Matrix Zeroes Matrix 2")

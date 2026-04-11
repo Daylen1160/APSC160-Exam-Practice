@@ -22,17 +22,15 @@ Spiral order means:
 ## Examples
 
 ```text
-Example 1:
 Input: 3, 3, [[1,2,3],[4,5,6],[7,8,9]]
-Output (result): [1,2,3,6,9,8,7,4,5]
+Modified (result): [1,2,3,6,9,8,7,4,5]
 ```
 
 ![Spiral Matrix Example 1](../../../img/spiralmatrix1.jpg "Spiral Matrix Example 1")
 
 ```text
-Example 2:
 Input: 3, 4, [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
-Output (result): [1,2,3,4,8,12,11,10,9,5,6,7]
+Modified (result): [1,2,3,4,8,12,11,10,9,5,6,7]
 ```
 
 ![Spiral Matrix Example 2](../../../img/spiralmatrix2.jpg "Spiral Matrix Example 2")

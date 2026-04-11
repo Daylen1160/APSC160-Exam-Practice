@@ -26,7 +26,7 @@ The next state of the board is determined by applying the above rules simultaneo
 
 ```text
 Input: 4, 3, [[0,1,0],[0,0,1],[1,1,1],[0,0,0]]
-Modified Matrix: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
+Modified (matrix): [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
 ```
 
 ![Board1](../../../img/board1.jpg "Board1")
@@ -34,7 +34,7 @@ Modified Matrix: [[0,0,0],[1,0,1],[0,1,1],[0,1,0]]
 
 ```text
 Input: 2, 2, [[1,1],[1,0]]
-Modified Matrix: [[1,1],[1,1]]
+Modified (matrix): [[1,1],[1,1]]
 ```
 
 ![Board2](../../../img/board2.jpg "Board2")
