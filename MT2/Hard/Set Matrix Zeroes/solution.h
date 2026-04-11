@@ -25,6 +25,18 @@ void setMatrixZeroes(int NUMROWS, int NUMCOLS, int matrix[][NUMCOLS]) {
         zeroCols[j] = 0;
     }
 
+    /* NOTE: It is worth mentioning that arrays can usually be created with 
+    all 0s with the following syntax:
+
+    int zeroRows[NUMROWS] = {0};
+    int zeroCols[NUMCOLS] = {0};
+
+    However, in this problem, the arrays will take variable length depending on the arguments
+    passed into NUMROWS and NUMCOLS, thus we cannot do it this way.
+
+    So all the code above could be simplified into two lines only if the size of the arrays were already known at compile time.
+    */
+
     for (int i = 0; i < NUMROWS; i++) {
         for (int j = 0; j < NUMCOLS; j++) {
             if (matrix[i][j] == 0) {

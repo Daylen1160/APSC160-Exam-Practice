@@ -1,6 +1,6 @@
 # 🔴 Set Matrix Zeroes
 
-**Recommended Time:** 30 - 45 min
+**Recommended Time:** 10 - 30 min
 
 **Topics:** Branching, Loops, Functions, 1D Array, 2D Array
 
@@ -34,6 +34,7 @@ Modified Matrix: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 
 ## Hints
 - It would be helpful to store which rows and columns need to be set to 0.
+- I included a further useful insight (not relevant to helping you solve the problem) in my solution.
 
 ## Credits
 
