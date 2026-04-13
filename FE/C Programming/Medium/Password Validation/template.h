@@ -8,6 +8,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdbool.h>
+
 int passwordStrengthValidator(char password[]);
 
 /**

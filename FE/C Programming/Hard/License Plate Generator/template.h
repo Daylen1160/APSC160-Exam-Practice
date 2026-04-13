@@ -4,16 +4,18 @@
  * @author Daylen Chun
  */
 
-#define NUMPLATES 5
-#define PLATELENGTH 8
-#define NUMLETTERS 3
-#define NUMDIGITS 3
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
 #include <time.h>
+
+#define NUMPLATES 5
+#define PLATELENGTH 8
+#define NUMLETTERS 3
+#define NUMDIGITS 3
+
 void licensePlateGenerator(char licensePlates[][PLATELENGTH]);
 
 /**
