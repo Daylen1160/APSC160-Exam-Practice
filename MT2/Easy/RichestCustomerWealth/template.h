@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Richest Customer Wealth Template
  * @author Daylen Chun
@@ -14,5 +14,6 @@ int richestCustomerWealth(int NUMROWS, int NUMCOLS, int accounts[][NUMCOLS]);
  * @return The maximum wealth among all customers
  */
 int richestCustomerWealth(int NUMROWS, int NUMCOLS, int accounts[][NUMCOLS]) {
-    // TODO: Implement this method
+    // TODO: Implement this function
 }
+

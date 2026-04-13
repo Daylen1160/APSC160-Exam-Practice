@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Game of Life Template
  * @author Daylen Chun
@@ -14,5 +14,6 @@ void gameOfLife(int NUMROWS, int NUMCOLS, int board[][NUMCOLS]);
  * @modifies board to its next state
  */
 void gameOfLife(int NUMROWS, int NUMCOLS, int board[][NUMCOLS]) {
-    // TODO: Implement this method
+    // TODO: Implement this function
 }
+

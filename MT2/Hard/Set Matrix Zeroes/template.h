@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Set Matrix Zeroes Template
  * @author Daylen Chun
@@ -14,5 +14,6 @@ void setMatrixZeroes(int NUMROWS, int NUMCOLS, int matrix[][NUMCOLS]);
  * @modifies matrix in-place
  */
 void setMatrixZeroes(int NUMROWS, int NUMCOLS, int matrix[][NUMCOLS]) {
-    // TODO: Implement this method
+    // TODO: Implement this function
 }
+

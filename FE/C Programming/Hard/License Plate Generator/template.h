@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief License Plate Generator Template
  * @author Daylen Chun
@@ -24,5 +24,6 @@ void licensePlateGenerator(char licensePlates[][PLATELENGTH]);
  * @modifies licensePlates with generated plates
  */
 void licensePlateGenerator(char licensePlates[][PLATELENGTH]) {
-    // TODO: Implement this method
+    // TODO: Implement this function
 }
+

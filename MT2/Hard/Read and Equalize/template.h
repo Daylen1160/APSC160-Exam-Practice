@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Read and Equalize Template
  * @author Daylen Chun
@@ -16,5 +16,6 @@ int readAndEqualize(char fileName[], int fileRows, int evenOrOdd);
  * @return The minimum number of values to remove to equalize the array
  */
 int readAndEqualize(char fileName[], int fileRows, int evenOrOdd) {
-    // TODO: Implement this method
+    // TODO: Implement this function
 }
+

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Array Statistics Template
  * @author Daylen Chun

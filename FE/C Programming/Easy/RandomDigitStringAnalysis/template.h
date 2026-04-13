@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Random Digit String Analysis Template
  * @author Daylen Chun

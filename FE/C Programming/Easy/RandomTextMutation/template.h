@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Random Text Mutation Template
  * @author Daylen Chun

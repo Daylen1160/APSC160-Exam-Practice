@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Alien Language Template
  * @author Daylen Chun

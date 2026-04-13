@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Most Frequent Character Game Template
  * @author Daylen Chun

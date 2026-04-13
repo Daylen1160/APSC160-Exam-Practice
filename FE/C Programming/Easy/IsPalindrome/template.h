@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Is Palindrome Template
  * @author Daylen Chun

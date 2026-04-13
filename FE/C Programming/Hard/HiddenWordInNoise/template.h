@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Hidden Word in Noise Template
  * @author Daylen Chun

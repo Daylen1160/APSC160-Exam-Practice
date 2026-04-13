@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Holiday of Equality Template
  * @author Daylen Chun
@@ -15,5 +15,6 @@ int minimumBurlesToSpend(int[], int);
  * @return The minimum number of burles to spend to equalize welfare
  */
 int minimumBurlesToSpend(int citizens[], int citizensSize) {
-	// TODO: Implement this method
+	// TODO: Implement this function
 }
+

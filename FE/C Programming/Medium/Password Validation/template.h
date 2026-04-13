@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Password Validation Template
  * @author Daylen Chun
@@ -17,5 +17,6 @@ int passwordStrengthValidator(char password[]);
  * @return An integer strength score based on the criteria met
  */
 int passwordStrengthValidator(char password[]) {
-    // TODO: Implement this method
+    // TODO: Implement this function
 }
+

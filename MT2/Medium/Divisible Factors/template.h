@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Divisible Factors Template
  * @author Daylen Chun

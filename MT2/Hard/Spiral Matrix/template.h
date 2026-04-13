@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Spiral Matrix Template
  * @author Daylen Chun
@@ -15,5 +15,6 @@ void spiralOrder(int NUMROWS, int NUMCOLS, int matrix[][NUMCOLS], int result[]);
  * @modifies result array
  */
 void spiralOrder(int NUMROWS, int NUMCOLS, int matrix[][NUMCOLS], int result[]) {
-    // TODO: Implement this method
+    // TODO: Implement this function
 }
+

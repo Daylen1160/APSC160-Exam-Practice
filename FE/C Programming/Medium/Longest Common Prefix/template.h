@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @file template.h
  * @brief Longest Common Prefix Template
  * @author Daylen Chun
@@ -16,6 +16,7 @@ int longestCommonPrefix(char strs[][MAX_WORD_LENGTH], int strsLength, char longe
  * @return The length of the longest common prefix
  */
 int longestCommonPrefix(char strs[][MAX_WORD_LENGTH], int strsLength, char longestPrefix[]) {
-    // TODO: Implement this method
+    // TODO: Implement this function
     return -1;
 }
+
