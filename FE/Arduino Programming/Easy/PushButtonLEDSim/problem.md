@@ -43,8 +43,6 @@ The program must implement the following functions:
 
 The sequence continues indefinitely.
 
----
-
-# Template
+## Template
 
 **TinkerCAD Link:** https://www.tinkercad.com/things/gxzP7iPxu5k-push-button-led-simulation?sharecode=3bmBjRy5zD66DEc7tWmFReYo9Xs4nYN6AyiVRoy7_lk

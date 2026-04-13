@@ -185,8 +185,8 @@ static TestResult runTestCase(int caseNumber) {
 }
 
 int main(void) {
-    fprintf(stderr, "=== Jumbled Sentence Guessing Autograder ===\n");
-    fprintf(stderr, "Testing jumbling flow and guess validation...\n\n");
+    printf("Running Jumbled Sentence Guessing Test Cases...\n");
+    printf("====================================================\n\n");
 
     int totalTests = 5;
     int passedTests = 0;
@@ -195,41 +195,35 @@ int main(void) {
         TestResult result = runTestCase(i);
 
         if (result.passed) {
-            fprintf(stderr, "Test Case %d: PASS\n", result.caseNumber);
-            fprintf(stderr, "  Jumbled output shown: yes\n");
-            fprintf(stderr, "  Guess prompt shown: yes\n");
-            fprintf(stderr, "  Correct Guess found: yes\n");
-            fprintf(stderr, "  Correct sentence: \"%s\"\n", result.guessedSentence);
-            fprintf(stderr, "  Sentence has exactly 5 words: yes\n\n");
+            printf("Test Case %d: PASS\n", result.caseNumber);
+            printf("  Jumbled output shown: yes\n");
+            printf("  Guess prompt shown: yes\n");
+            printf("  Correct Guess found: yes\n");
+            printf("  Correct sentence: \"%s\"\n", result.guessedSentence);
+            printf("  Sentence has exactly 5 words: yes\n");
             passedTests++;
         } else {
-            fprintf(stderr, "Test Case %d: FAIL\n", result.caseNumber);
+            printf("Test Case %d: FAIL\n", result.caseNumber);
 
             if (!result.hasOutput) {
-                fprintf(stderr, "  ERROR: Could not capture program output\n");
+                printf("  ERROR: Could not capture program output\n");
             } else if (!result.hasJumble) {
-                fprintf(stderr, "  ERROR: Missing jumbled words output section\n");
+                printf("  ERROR: Missing jumbled words output section\n");
             } else if (!result.hasPrompt) {
-                fprintf(stderr, "  ERROR: Missing guess prompt\n");
+                printf("  ERROR: Missing guess prompt\n");
             } else if (!result.hasCorrectGuess) {
-                fprintf(stderr, "  ERROR: Missing 'Correct Guess' output\n");
+                printf("  ERROR: Missing 'Correct Guess' output\n");
             } else if (!result.guessedSentenceHasFiveWords) {
-                fprintf(stderr, "  ERROR: Correct sentence is not exactly 5 words\n");
-                fprintf(stderr, "  Parsed sentence: \"%s\"\n", result.guessedSentence);
+                printf("  ERROR: Correct sentence is not exactly 5 words\n");
+                printf("  Parsed sentence: \"%s\"\n", result.guessedSentence);
             }
-
-            fprintf(stderr, "\n");
         }
+
+        printf("----------------------------------------\n");
     }
 
-    fprintf(stderr, "=== Summary ===\n");
-    fprintf(stderr, "Passed: %d/%d tests\n\n", passedTests, totalTests);
-
-    if (passedTests == totalTests) {
-        fprintf(stderr, "All tests passed! Solution is correct.\n");
-    } else {
-        fprintf(stderr, "Some tests failed. Review the errors above.\n");
-    }
+    printf("\nSummary: %d/%d test cases passed.\n", passedTests, totalTests);
+    printf("====================================================\n");
 
     return 0;
 }

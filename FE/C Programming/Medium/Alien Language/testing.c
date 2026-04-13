@@ -1,4 +1,9 @@
-// Rename main() to student_main() so we can call it
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdbool.h>
+
 #define main student_main
 
 /* ============ DO NOT CHANGE ANYTHING ABOVE THIS LINE ============ */
@@ -8,132 +13,146 @@
 
 #undef main
 
-// DO NOT MODIFY BELOW THIS LINE
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-
-// Compute expected encoding according to problem rules:
-// - Letters (A-Z or a-z): treated the same. Convert to uppercase, then map to char with value (ASCII_upper - 32).
-// - Digits: replaced with the character whose ASCII value equals the length of the sentence.
-// - Everything else: left unchanged.
-void compute_expected(const char *orig, char *out, size_t outsize) {
+static void computeExpected(const char *orig, char *out, size_t outSize) {
     size_t len = strlen(orig);
     size_t pos = 0;
-    for (size_t i = 0; i < len && pos + 1 < outsize; ++i) {
+
+    for (size_t i = 0; i < len && pos + 1 < outSize; i++) {
         unsigned char c = (unsigned char)orig[i];
+
         if (isalpha(c)) {
             unsigned char up = (unsigned char)toupper(c);
-            unsigned char mapped = (unsigned char)((int)up - 32);
-            out[pos++] = (char)mapped;
+            out[pos++] = (char)(up - 32);
         } else if (isdigit(c)) {
-            unsigned char mapped = (unsigned char)len;
-            out[pos++] = (char)mapped;
+            out[pos++] = (char)len;
         } else {
             out[pos++] = orig[i];
         }
     }
+
     out[pos] = '\0';
 }
 
+static int writeInputFile(const char *sentence) {
+    FILE *finput = fopen("input.txt", "w");
+    if (finput == NULL) {
+        fprintf(stderr, "Failed to create input.txt\n");
+        return 0;
+    }
+
+    fprintf(finput, "%s\n", sentence);
+    fclose(finput);
+    return 1;
+}
+
+static int runStudentProgram(const char *sentence) {
+    if (!writeInputFile(sentence)) {
+        return 0;
+    }
+
+    if (!freopen("input.txt", "r", stdin)) {
+        perror("freopen stdin failed");
+        return 0;
+    }
+
+    if (!freopen("output.txt", "w", stdout)) {
+        perror("freopen stdout failed");
+        return 0;
+    }
+
+    student_main();
+    fflush(stdout);
+    return 1;
+}
+
+static int readDecoderLines(char line1[], size_t line1Size,
+                            char line2[], size_t line2Size) {
+    FILE *f = fopen("decoder.txt", "r");
+    if (f == NULL) {
+        return 0;
+    }
+
+    if (fgets(line1, (int)line1Size, f) == NULL) {
+        fclose(f);
+        return 0;
+    }
+
+    if (fgets(line2, (int)line2Size, f) == NULL) {
+        fclose(f);
+        return 0;
+    }
+
+    fclose(f);
+
+    line1[strcspn(line1, "\r\n")] = '\0';
+    line2[strcspn(line2, "\r\n")] = '\0';
+    return 1;
+}
+
+static int runTestCase(int caseNumber, const char *inputSentence) {
+    if (!runStudentProgram(inputSentence)) {
+        printf("Test Case %d: FAIL\n", caseNumber);
+        printf("  Could not execute student program.\n");
+        return 0;
+    }
+
+    char original[4096] = "";
+    char actualEncoded[4096] = "";
+    if (!readDecoderLines(original, sizeof(original), actualEncoded, sizeof(actualEncoded))) {
+        printf("Test Case %d: FAIL\n", caseNumber);
+        printf("  Could not read two lines from decoder.txt\n");
+        return 0;
+    }
+
+    char expectedEncoded[4096] = "";
+    computeExpected(inputSentence, expectedEncoded, sizeof(expectedEncoded));
+
+    int line1Pass = strcmp(original, inputSentence) == 0;
+    int line2Pass = strcmp(actualEncoded, expectedEncoded) == 0;
+
+    if (line1Pass && line2Pass) {
+        printf("Test Case %d: PASS\n", caseNumber);
+        return 1;
+    }
+
+    printf("Test Case %d: FAIL\n", caseNumber);
+    if (!line1Pass) {
+        printf("  decoder.txt line 1 mismatch\n");
+        printf("  Expected: \"%s\"\n", inputSentence);
+        printf("  Actual:   \"%s\"\n", original);
+    }
+    if (!line2Pass) {
+        printf("  decoder.txt line 2 mismatch\n");
+        printf("  Expected: \"%s\"\n", expectedEncoded);
+        printf("  Actual:   \"%s\"\n", actualEncoded);
+    }
+
+    return 0;
+}
+
 int main(void) {
-    printf("Running Alien Language tests...\n");
+    printf("Running Alien Language Test Cases...\n");
     printf("====================================================\n\n");
 
-    // 1. Setup Input for student_main
-    const char *input_filename = "_input_test.txt";
-    // We use a sentence with mixed case, digits, and punctuation for a good test.
-    const char *test_sentence = "The Quick Brown Fox Jumps Over 13 Lazy Dogs.";
-    
-    FILE *infile = fopen(input_filename, "w");
-    if (!infile) {
-        printf("Error creating test input file.\n");
-        return 1;
-    }
-    fprintf(infile, "%s\n", test_sentence);
-    fclose(infile);
+    int totalTests = 0;
+    int passedTests = 0;
 
-    // 2. Redirect stdin to the file so scanf works without user interaction
-    if (!freopen(input_filename, "r", stdin)) {
-        printf("Error redirecting stdin.\n");
-        return 1;
-    }
+    const char *testInputs[] = {
+        "APSC160 is the best course in first year engineering!",
+        "I scored 95 on my first quiz!",
+        "The 2 foxes jump over 13 lazy dogs."
+    };
+    int testCount = (int)(sizeof(testInputs) / sizeof(testInputs[0]));
 
-    // 3. Run student's main
-    printf("Invoking your main() with input: \"%s\"\n", test_sentence);
-    printf("(Your program output starts below)\n");
-    printf("----------------------------------------\n");
-    
-    // We expect student_main to return 0, but whatever it returns is fine.
-    int ret = student_main();
-    
-    // Flush stdout to ensure student output is printed before our validation output
-    fflush(stdout);
-    
-    printf("\n----------------------------------------\n");
-    printf("(Student program finished with exit code %d)\n", ret);
-
-    // 4. Validate output file (decoder.txt)
-    const char *filename = "decoder.txt";
-    FILE *f = fopen(filename, "r");
-    if (!f) {
-        printf("\nERROR: Could not open '%s' for reading.\n", filename);
-        printf("Make sure your program creates '%s' and writes to it!\n", filename);
-        // Clean up
-        remove(input_filename);
-        return 2;
-    }
-
-    char orig[2048] = {0};
-    char actual[4096] = {0};
-
-    // Read line 1: original sentence (from decoder.txt)
-    if (!fgets(orig, sizeof(orig), f)) {
-        printf("\nERROR: '%s' is empty or missing the original sentence (Line 1).\n", filename);
-        fclose(f);
-        remove(input_filename);
-        return 3;
-    }
-    // Remove newline
-    orig[strcspn(orig, "\r\n")] = '\0';
-
-    // Read line 2: encoded sentence (from decoder.txt)
-    if (!fgets(actual, sizeof(actual), f)) {
-        printf("\nERROR: '%s' is missing the encoded sentence (Line 2).\n", filename);
-        fclose(f);
-        remove(input_filename);
-        return 3;
-    }
-    actual[strcspn(actual, "\r\n")] = '\0';
-    fclose(f);
-    
-    // Cleanup
-    remove(input_filename);
-
-    // 5. Compare
-    char expected[4096];
-    compute_expected(orig, expected, sizeof(expected));
-
-    printf("\nValidation Results:\n");
-    printf("-------------------\n");
-    printf("Line 1 (Original): \"%s\"\n", orig);
-    printf("Line 2 (Actual):   \"%s\"\n", actual);
-    printf("Line 2 (Expected): \"%s\"\n", expected);
-
-    if (strcmp(actual, expected) == 0) {
-        printf("Test Case 1: PASS\n");
+    for (int i = 0; i < testCount; i++) {
+        totalTests++;
+        if (runTestCase(totalTests, testInputs[i])) {
+            passedTests++;
+        }
         printf("----------------------------------------\n");
-        printf("\nSummary: 1/1 test cases passed.\n");
-        printf("====================================================\n");
-        return 0;
-    } else {
-        printf("Test Case 1: FAIL\n");
-        printf("  Expected: \"%s\"\n", expected);
-        printf("  Actual:   \"%s\"\n", actual);
-        printf("----------------------------------------\n");
-        printf("\nSummary: 0/1 test cases passed.\n");
-        printf("====================================================\n");
-        return 1;
     }
+
+    printf("\nSummary: %d/%d test cases passed.\n", passedTests, totalTests);
+    printf("====================================================\n");
+    return 0;
 }

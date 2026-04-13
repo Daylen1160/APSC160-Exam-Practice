@@ -17,8 +17,6 @@ Implement a function `toggleLEDs()` to update the states of the LEDs for each ch
 * **Input:** None (program runs automatically)  
 * **Output:** The 7-segment display shows the characters of "APSC160." sequentially, one at a time.  
 
----
-
 ## Examples
 
 **Behavior:**

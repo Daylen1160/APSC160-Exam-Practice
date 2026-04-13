@@ -15,7 +15,7 @@ void fake_srand(unsigned int seed);
 
 /* ============ DO NOT CHANGE ANYTHING ABOVE THIS LINE ============ */
 // Change this to either "template.h" or "solution1.h" or "solution2.h" to test
-#include "solution1.h"
+#include "template.h"
 /* ============ DO NOT CHANGE ANYTHING BELOW THIS LINE ============ */
 
 #undef main
