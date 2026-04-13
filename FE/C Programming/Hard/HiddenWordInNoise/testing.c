@@ -9,24 +9,32 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include <time.h>
 
 // HIJACK MACROS
 int portable_rand(void);
 void fake_srand(unsigned int seed);
+time_t fake_time(time_t *tloc);
 #undef rand
 #undef srand
+#undef time
 #define rand portable_rand
 #define srand fake_srand
+#define time fake_time
 #define main student_main
 
 /* ============ DO NOT CHANGE ANYTHING ABOVE THIS LINE ============ */
-// Change this to either "template.h" or "solution.h" to test
+// Change this to either "template.h" or "solution1.h" or "solution2.h" to test
 #include "template.h"
 /* ============ DO NOT CHANGE ANYTHING BELOW THIS LINE ============ */
 
 #undef main
 
 static unsigned long int next = 1;
+static time_t fakeTimeValue = 12345;
+
+static const char *WORD_LIST[] = {"tree", "cat", "fly", "book", "sun"};
+static const int WORD_LIST_SIZE = 5;
 
 int portable_rand(void) {
     next = next * 1103515245 + 12345;
@@ -34,133 +42,53 @@ int portable_rand(void) {
 }
 
 void fake_srand(unsigned int seed) {
-    (void)seed;
-    next = 12345;
+    next = seed;
 }
 
-// ========== HELPER VALIDATION FUNCTIONS ==========
+time_t fake_time(time_t *tloc) {
+    if (tloc != NULL) {
+        *tloc = fakeTimeValue;
+    }
+    return fakeTimeValue;
+}
 
-/**
- * Word list matching solution
- */
-static const char *WORD_LIST[] = {"tree", "cat", "fly", "book", "sun"};
-static const int WORD_LIST_SIZE = 5;
-
-/**
- * Derive the expected target word based on deterministic RNG
- */
-static const char *getTargetWord(void) {
-    next = 12345;
+static const char *predictTargetWord(time_t seed) {
+    fake_srand((unsigned int)seed);
     int wordIdx = portable_rand() % WORD_LIST_SIZE;
     return WORD_LIST[wordIdx];
 }
 
-/**
- * Extract the 30-character hidden string from output
- */
-static int extractHiddenString(const char *output, char *hiddenStr) {
-    const char *p = output;
-
-    while (*p) {
-        // Skip until we find a lowercase letter
-        if (!islower(*p)) {
-            p++;
-            continue;
-        }
-
-        // Count consecutive lowercase letters
-        int len = 0;
-        char temp[50] = "";
-        const char *start = p;
-        while (*p && islower(*p) && len < 50) {
-            temp[len++] = *p;
-            p++;
-        }
-
-        // Check if this is a 30-char sequence
-        if (len == 30) {
-            strcpy(hiddenStr, temp);
-            return 1;
-        }
-
-        // If we didn't find 30 but found significant length, reset
-        if (len > 0 && len != 30) {
-            p = start + 1;
-        }
-    }
-
-    return 0;
-}
-
-/**
- * Verify the hidden string contains the target word
- */
-static int verifyHiddenString(const char *hiddenStr, const char *targetWord) {
-    if (strlen(hiddenStr) != 30) {
-        return 0;
-    }
-
-    // Check if target word appears as a substring
-    return (strstr(hiddenStr, targetWord) != NULL) ? 1 : 0;
-}
-
-/**
- * Check for "Correct Guess" message in output
- */
-static int hasCorrectGuessMessage(const char *output, const char *word) {
-    if (strstr(output, "Correct Guess") == NULL) {
-        return 0;
-    }
-    return (strstr(output, word) != NULL) ? 1 : 0;
-}
-
-/**
- * Check for user interaction prompts
- */
-static int hasInteraction(const char *output) {
-    return (strstr(output, "Enter your guess") != NULL) ||
-           (strstr(output, "guess") != NULL);
-}
-
-/**
- * Create input file with test guesses
- */
-static int writeInputFile(const char *correctWord) {
+static int writeInputFile(const char *inputScript) {
     FILE *finput = fopen("input.txt", "w");
     if (finput == NULL) {
-        fprintf(stderr, "Failed to create input.txt\n");
         return 0;
     }
-    fprintf(finput, "wrong\n%s\n", correctWord);
+    fprintf(finput, "%s", inputScript);
     fclose(finput);
     return 1;
 }
 
-/**
- * Capture program output to buffer
- */
-static int captureProgramOutput(const char *correctWord, char outputBuffer[], size_t bufferSize) {
-    if (!writeInputFile(correctWord)) {
+static int captureProgramOutput(time_t seed,
+                                const char *inputScript,
+                                char outputBuffer[],
+                                size_t bufferSize) {
+    if (!writeInputFile(inputScript)) {
         return 0;
     }
 
     if (!freopen("input.txt", "r", stdin)) {
-        perror("freopen stdin failed");
         return 0;
     }
-
     if (!freopen("output.txt", "w", stdout)) {
-        perror("freopen stdout failed");
         return 0;
     }
 
-    next = 12345;
+    fakeTimeValue = seed;
     student_main();
     fflush(stdout);
 
     FILE *foutput = fopen("output.txt", "r");
     if (foutput == NULL) {
-        fprintf(stderr, "Failed to read output.txt\n");
         return 0;
     }
 
@@ -173,104 +101,155 @@ static int captureProgramOutput(const char *correctWord, char outputBuffer[], si
     return 1;
 }
 
-// ========== TEST CASE RUNNER ==========
+static int extract30LetterSequence(const char *output, char sequenceOut[31]) {
+    const char *p = output;
 
-typedef struct {
-    int caseNumber;
-    bool passed;
-    char hiddenString[35];
-    char targetWord[20];
-    bool foundString;
-    bool stringValid;
-    bool hasCorrectMessage;
-    bool hasInteraction;
-} TestResult;
+    while (*p) {
+        if (!islower((unsigned char)*p)) {
+            p++;
+            continue;
+        }
 
-static TestResult runTestCase(int caseNumber) {
-    TestResult result;
-    result.caseNumber = caseNumber;
-    result.passed = false;
-    result.foundString = false;
-    result.stringValid = false;
-    result.hasCorrectMessage = false;
-    result.hasInteraction = false;
-    strcpy(result.hiddenString, "");
-    strcpy(result.targetWord, "");
+        int len = 0;
+        char temp[64] = "";
+        const char *start = p;
+        while (*p && islower((unsigned char)*p) && len < 63) {
+            temp[len++] = *p;
+            p++;
+        }
 
-    // Get expected target word
-    const char *expectedTarget = getTargetWord();
-    strcpy(result.targetWord, expectedTarget);
+        if (len == 30) {
+            temp[30] = '\0';
+            strcpy(sequenceOut, temp);
+            return 1;
+        }
 
-    // Capture program output
-    char output[2048] = "";
-    if (!captureProgramOutput(expectedTarget, output, sizeof(output))) {
-        return result;
-    }
-
-    // Extract and validate hidden string
-    result.foundString = extractHiddenString(output, result.hiddenString);
-    if (result.foundString) {
-        result.stringValid = verifyHiddenString(result.hiddenString, expectedTarget);
-    }
-
-    // Check for interaction and correct message
-    result.hasInteraction = hasInteraction(output);
-    result.hasCorrectMessage = hasCorrectGuessMessage(output, expectedTarget);
-
-    // Pass if all conditions met
-    result.passed = result.foundString && result.stringValid &&
-                    result.hasInteraction && result.hasCorrectMessage;
-
-    return result;
-}
-
-// ========== MAIN TEST HARNESS ==========
-
-int main(void) {
-    fprintf(stderr, "=== Hidden Word in Noise Autograder ===\n");
-    fprintf(stderr, "Testing hidden word generation and guessing...\n\n");
-
-    int totalTests = 5;
-    int passedTests = 0;
-
-    for (int i = 1; i <= totalTests; i++) {
-        TestResult result = runTestCase(i);
-
-        if (result.passed) {
-            fprintf(stderr, "Test Case %d: PASS\n", result.caseNumber);
-            fprintf(stderr, "  Hidden string (30 chars): %s\n", result.hiddenString);
-            fprintf(stderr, "  Target word: '%s'\n", result.targetWord);
-            fprintf(stderr, "  Word found in string: yes\n");
-            fprintf(stderr, "  Accepts user input: yes\n");
-            fprintf(stderr, "  Correct guess message: yes\n\n");
-            passedTests++;
-        } else {
-            fprintf(stderr, "Test Case %d: FAIL\n", result.caseNumber);
-
-            if (!result.foundString) {
-                fprintf(stderr, "  ERROR: Could not extract a 30-character hidden string from output\n");
-            } else if (!result.stringValid) {
-                fprintf(stderr, "  ERROR: Hidden string does not contain target word '%s'\n",
-                        result.targetWord);
-                fprintf(stderr, "  String found: %s\n", result.hiddenString);
-            } else if (!result.hasInteraction) {
-                fprintf(stderr, "  ERROR: Program does not prompt for user input\n");
-            } else if (!result.hasCorrectMessage) {
-                fprintf(stderr, "  ERROR: Program does not output 'Correct Guess' message\n");
-            }
-
-            fprintf(stderr, "\n");
+        if (len > 0 && len != 30) {
+            p = start + 1;
         }
     }
 
-    fprintf(stderr, "=== Summary ===\n");
-    fprintf(stderr, "Passed: %d/%d tests\n\n", passedTests, totalTests);
+    return 0;
+}
 
-    if (passedTests == totalTests) {
-        fprintf(stderr, "✓ All tests passed! Solution is correct.\n");
-    } else {
-        fprintf(stderr, "✗ Some tests failed. Review the errors above.\n");
+static int containsIgnoreCase(const char *text, const char *needle) {
+    size_t nlen = strlen(needle);
+    if (nlen == 0) {
+        return 1;
     }
 
+    for (size_t i = 0; text[i] != '\0'; i++) {
+        size_t j = 0;
+        while (needle[j] != '\0' && text[i + j] != '\0' &&
+               tolower((unsigned char)text[i + j]) == tolower((unsigned char)needle[j])) {
+            j++;
+        }
+        if (j == nlen) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+static int findInsertionIndex(const char *sequence, const char *targetWord) {
+    const char *loc = strstr(sequence, targetWord);
+    if (loc == NULL) {
+        return -1;
+    }
+    return (int)(loc - sequence);
+}
+
+int main(void) {
+    fprintf(stderr, "Running Hidden Word in Noise Test Cases...\n");
+    fprintf(stderr, "====================================================\n\n");
+
+    int totalTests = 0;
+    int passedTests = 0;
+
+    char outputA[4096] = "";
+    char outputB[4096] = "";
+    char sequenceA[31] = "";
+    char sequenceB[31] = "";
+
+    time_t seedA = 12345;
+    time_t seedB = 54321;
+
+    const char *targetA = predictTargetWord(seedA);
+    const char *targetB = predictTargetWord(seedB);
+
+    char inputA[128];
+    char inputB[128];
+    snprintf(inputA, sizeof(inputA), "wrong\n%s\n", targetA);
+    snprintf(inputB, sizeof(inputB), "wrong\n%s\n", targetB);
+
+    int ranA = captureProgramOutput(seedA, inputA, outputA, sizeof(outputA));
+    int ranB = captureProgramOutput(seedB, inputB, outputB, sizeof(outputB));
+
+    int hasSeqA = ranA && extract30LetterSequence(outputA, sequenceA);
+    int hasSeqB = ranB && extract30LetterSequence(outputB, sequenceB);
+
+    // --- Test Case 1: 30-letter sequence is printed ---
+    totalTests++;
+    if (hasSeqA) {
+        passedTests++;
+        fprintf(stderr, "Test Case %d: PASS\n", totalTests);
+        fprintf(stderr, "  30-letter sequence found: %s\n", sequenceA);
+    } else {
+        fprintf(stderr, "Test Case %d: FAIL\n", totalTests);
+        fprintf(stderr, "  Could not find a 30-letter lowercase sequence in output.\n");
+    }
+    fprintf(stderr, "----------------------------------------\n");
+
+    // --- Test Case 2: Guessing mechanism works + final message includes 'guessed' ---
+    totalTests++;
+    int hasGuessPrompt = ranA && containsIgnoreCase(outputA, "guess");
+    int hasGuessedWord = ranA && containsIgnoreCase(outputA, "guessed");
+    if (hasGuessPrompt && hasGuessedWord) {
+        passedTests++;
+        fprintf(stderr, "Test Case %d: PASS\n", totalTests);
+        fprintf(stderr, "  Guess interaction detected.\n");
+        fprintf(stderr, "  Final message contains the word 'guessed'.\n");
+    } else {
+        fprintf(stderr, "Test Case %d: FAIL\n", totalTests);
+        if (!hasGuessPrompt) {
+            fprintf(stderr, "  Guessing mechanism not detected in output.\n");
+        }
+        if (!hasGuessedWord) {
+            fprintf(stderr, "  Final output does not contain the word 'guessed'.\n");
+        }
+    }
+    fprintf(stderr, "----------------------------------------\n");
+
+    // --- Test Case 3: Random sequence changes with seed ---
+    totalTests++;
+    int randomSequenceOK = hasSeqA && hasSeqB && strcmp(sequenceA, sequenceB) != 0;
+    if (randomSequenceOK) {
+        passedTests++;
+        fprintf(stderr, "Test Case %d: PASS\n", totalTests);
+        fprintf(stderr, "  Different seeds produced different random sequences.\n");
+    } else {
+        fprintf(stderr, "Test Case %d: FAIL\n", totalTests);
+        fprintf(stderr, "  Random sequence did not vary across different seeds.\n");
+    }
+    fprintf(stderr, "----------------------------------------\n");
+
+    // --- Test Case 4: Insertion position changes with seed ---
+    totalTests++;
+    int insertA = hasSeqA ? findInsertionIndex(sequenceA, targetA) : -1;
+    int insertB = hasSeqB ? findInsertionIndex(sequenceB, targetB) : -1;
+    int randomInsertOK = (insertA >= 0 && insertB >= 0 && insertA != insertB);
+    if (randomInsertOK) {
+        passedTests++;
+        fprintf(stderr, "Test Case %d: PASS\n", totalTests);
+        fprintf(stderr, "  Insertion index changed with seed (%d vs %d).\n", insertA, insertB);
+    } else {
+        fprintf(stderr, "Test Case %d: FAIL\n", totalTests);
+        fprintf(stderr, "  Insertion index did not vary as expected.\n");
+        fprintf(stderr, "  Index A: %d, Index B: %d\n", insertA, insertB);
+    }
+    fprintf(stderr, "----------------------------------------\n");
+
+    fprintf(stderr, "\nSummary: %d/%d test cases passed.\n", passedTests, totalTests);
+    fprintf(stderr, "====================================================\n");
     return 0;
 }

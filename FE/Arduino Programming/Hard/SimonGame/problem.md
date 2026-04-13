@@ -106,6 +106,10 @@ Assuming we run the program at different times, different sequences of pseudo-ra
 
 Always seed the random number generator before using it! An example will be provided in class.
 
+## Note:
+
+We would not expect you to do this on the final...
+
 ## Template
 
 **TinkerCAD Link:** https://www.tinkercad.com/things/bSM7T86kmvk-simon-game?sharecode=czHltkuWIeBbPtBeEcbnI9NKsiiW7DLpAQgcdPgTsoU

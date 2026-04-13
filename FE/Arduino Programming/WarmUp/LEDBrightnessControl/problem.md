@@ -32,8 +32,6 @@ Helper functions such as `increaseBrightness()` and `decreaseBrightness()` are o
 ## Input / Output
 * **Input:** Pushbutton states (pressed or not pressed).  
 * **Output:** LED brightness level (0–255), controlled via PWM.
----
-
 ## Examples
 
 **Behavior:**

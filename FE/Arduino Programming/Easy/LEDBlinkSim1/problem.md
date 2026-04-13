@@ -43,6 +43,6 @@ The LED pattern should appear to “move inward” as pairs turn ON: (1,8) → (
 Then “move outward” as pairs turn OFF: (1,8) → (2,7) → (3,6) → (4,5)
 With a **1-second delay** between all transitions.
 
-# Template:
+## Template:
 
-**TinkerCAD Link**: https://www.tinkercad.com/things/4YEI4BSLE7D-led-blink-simulation-ii?sharecode=jt-emIk-G1mPrQdTtt8rkWRqdhkKCjbeEitk9DUErc0
+**TinkerCAD Link**: https://www.tinkercad.com/things/bDf4hkEPADu-led-blink-simulation-i?sharecode=OxN86YX3GdHHhjjIkGTsOeGVa9FVnrMhDdDnRGghog0

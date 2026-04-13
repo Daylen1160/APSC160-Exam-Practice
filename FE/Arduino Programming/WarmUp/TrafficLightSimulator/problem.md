@@ -22,8 +22,6 @@ Only one LED should be on at a time. Helper functions (such as `green_light()`, 
 * **Input:** None (the program runs continuously on the Arduino).
 * **Output:** LED sequence: Green → Yellow → Red → repeat.
 
----
-
 ## Example
 
 **Behavior:**
@@ -31,8 +29,6 @@ Only one LED should be on at a time. Helper functions (such as `green_light()`, 
 2. Yellow LED turns ON for 3 seconds (green and red OFF).
 3. Red LED turns ON for 15 seconds (green and yellow OFF).
 4. Cycle repeats forever.
-
----
 
 ## Template
 
