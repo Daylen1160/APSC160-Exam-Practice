@@ -125,4 +125,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Spiral Matrix problem
 
+## [3.1.1] - 2026-04-13
+
+### Changed
+- Hidden Word In Noise alternate solution and autograder fixes
+- Jumbled Sentence Guessing alternate solution and autograder fixes
+
  
