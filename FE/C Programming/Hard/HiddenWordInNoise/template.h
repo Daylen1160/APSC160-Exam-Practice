@@ -6,6 +6,13 @@
 
 // TODO: Implement library imports
 
+#define MAX_WORD_LENGTH 10
+// TODO: Add other defines
+
+
+const char wordList[][MAX_WORD_LENGTH] = {"tree", "cat", "fly", "book", "sun"};
+const char wordCount = sizeof(wordList) / sizeof(wordList[0]);
+
 int main(void) {
     // TODO: Implement the solution
     return 0;

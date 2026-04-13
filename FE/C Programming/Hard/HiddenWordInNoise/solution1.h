@@ -1,7 +1,7 @@
 /**
- * @file solution.h
+ * @file solution1.h
  * @brief Hidden Word in Noise Solution
- * @author Aly Khan Nuruddin
+ * @authors Aly Khan Nuruddin and Daylen Chun
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -72,7 +72,7 @@ int main() {
         scanf(" %49s", guess);
 
         if (strcmp(guess, target) == 0) {
-            printf("Correct Guess: \"%s\"\n", target);
+            printf("You guessed correctly: \"%s\"\n", target);
             break;
         } else {
             printf("Incorrect. Try again.\n\n");
