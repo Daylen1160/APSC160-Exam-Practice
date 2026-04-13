@@ -120,7 +120,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated documentation in problem.md files to include credits and ASCII table for relevant problems
 - New Tags
 
-## [3.1.1] - 2026-04-11
+## [3.1.0] - 2026-04-11
 
 ### Added
 - Spiral Matrix problem
