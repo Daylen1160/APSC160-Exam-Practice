@@ -3,24 +3,36 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include <time.h>
 
 // HIJACK MACROS
 int portable_rand(void);
 void fake_srand(unsigned int seed);
+time_t fake_time(time_t *tloc);
+int hijacked_strcmp(const char *a, const char *b);
 #undef rand
 #undef srand
+#undef time
+#undef strcmp
 #define rand portable_rand
 #define srand fake_srand
+#define time fake_time
+#define strcmp hijacked_strcmp
 #define main student_main
 
 /* ============ DO NOT CHANGE ANYTHING ABOVE THIS LINE ============ */
-// Change this to either "template.h" or "solution.h" to test
+// Change this to either "template.h" or "solution1.h" or "solution2.h" to test
 #include "template.h"
 /* ============ DO NOT CHANGE ANYTHING BELOW THIS LINE ============ */
 
 #undef main
+#undef strcmp
 
 static unsigned long int next = 1;
+static time_t fakeTimeValue = 12345;
+static int strcmpCalls = 0;
+static int forceEqualAfterCalls = 0;
+static char lastComparedTarget[256] = "";
 
 int portable_rand(void) {
     next = next * 1103515245 + 12345;
@@ -28,51 +40,86 @@ int portable_rand(void) {
 }
 
 void fake_srand(unsigned int seed) {
-    (void)seed;
-    next = 12345;
+    next = seed;
 }
 
-// ========== HELPER VALIDATION FUNCTIONS ==========
+time_t fake_time(time_t *tloc) {
+    if (tloc != NULL) {
+        *tloc = fakeTimeValue;
+    }
+    return fakeTimeValue;
+}
 
-static int writeInputFile(void) {
-    FILE *finput = fopen("input.txt", "w");
-    if (finput == NULL) {
-        fprintf(stderr, "Failed to create input.txt\n");
+static int local_strcmp(const char *a, const char *b) {
+    while (*a != '\0' && *b != '\0' && *a == *b) {
+        a++;
+        b++;
+    }
+    return (unsigned char)*a - (unsigned char)*b;
+}
+
+int hijacked_strcmp(const char *a, const char *b) {
+    strcmpCalls++;
+
+    if (b != NULL && strlen(b) > 0 && strlen(b) < sizeof(lastComparedTarget)) {
+        strncpy(lastComparedTarget, b, sizeof(lastComparedTarget) - 1);
+        lastComparedTarget[sizeof(lastComparedTarget) - 1] = '\0';
+    }
+
+    // Safety guard to prevent infinite loops in broken implementations.
+    if (strcmpCalls > 500) {
         return 0;
     }
 
-    // Feed several candidate answers so a correct implementation can terminate.
-    fprintf(finput, "the children are playing outside\n");
-    fprintf(finput, "the cat ate my homework\n");
-    fprintf(finput, "i am reading a book\n");
-    fprintf(finput, "dogs love to play fetch\n");
-    fprintf(finput, "wrong sentence example here\n");
+    if (forceEqualAfterCalls > 0 && strcmpCalls >= forceEqualAfterCalls) {
+        return 0;
+    }
+
+    if (a == NULL && b == NULL) {
+        return 0;
+    }
+    if (a == NULL) {
+        return -1;
+    }
+    if (b == NULL) {
+        return 1;
+    }
+    return local_strcmp(a, b);
+}
+
+static int writeInputFile(const char *content) {
+    FILE *finput = fopen("input.txt", "w");
+    if (finput == NULL) {
+        return 0;
+    }
+    fprintf(finput, "%s", content);
     fclose(finput);
     return 1;
 }
 
-static int captureProgramOutput(char outputBuffer[], size_t bufferSize) {
-    if (!writeInputFile()) {
+static int runAndCapture(time_t seed, const char *inputScript,
+                         int forceEqualAt, char outputBuffer[], size_t bufferSize) {
+    if (!writeInputFile(inputScript)) {
         return 0;
     }
 
     if (!freopen("input.txt", "r", stdin)) {
-        perror("freopen stdin failed");
         return 0;
     }
-
     if (!freopen("output.txt", "w", stdout)) {
-        perror("freopen stdout failed");
         return 0;
     }
 
-    next = 12345;
+    fakeTimeValue = seed;
+    strcmpCalls = 0;
+    forceEqualAfterCalls = forceEqualAt;
+    lastComparedTarget[0] = '\0';
+
     student_main();
     fflush(stdout);
 
     FILE *foutput = fopen("output.txt", "r");
     if (foutput == NULL) {
-        fprintf(stderr, "Failed to read output.txt\n");
         return 0;
     }
 
@@ -102,128 +149,231 @@ static int countWords(const char *text) {
     return words;
 }
 
-static int extractCorrectGuessSentence(const char *output, char sentenceOut[], size_t outSize) {
-    const char *anchor = strstr(output, "Correct Guess");
-    if (anchor == NULL) {
-        return 0;
-    }
-
-    const char *colon = strchr(anchor, ':');
-    if (colon == NULL) {
-        return 0;
-    }
-
-    const char *p = colon + 1;
-    while (*p == ' ' || *p == '"') {
-        p++;
-    }
-
+static int splitWords(const char *text, char words[5][64]) {
+    int count = 0;
     size_t i = 0;
-    while (*p != '\0' && *p != '\n' && *p != '"' && i < outSize - 1) {
-        sentenceOut[i++] = *p++;
+
+    while (text[i] != '\0' && count < 5) {
+        while (isspace((unsigned char)text[i])) {
+            i++;
+        }
+        if (text[i] == '\0') {
+            break;
+        }
+
+        size_t j = 0;
+        while (text[i] != '\0' && !isspace((unsigned char)text[i]) && j < 63) {
+            words[count][j++] = text[i++];
+        }
+        words[count][j] = '\0';
+        count++;
     }
 
-    while (i > 0 && isspace((unsigned char)sentenceOut[i - 1])) {
-        i--;
-    }
-    sentenceOut[i] = '\0';
-    return i > 0;
+    return count;
 }
 
-static int hasJumbledOutput(const char *output) {
-    return (strstr(output, "Jumbled") != NULL) ||
-           (strstr(output, "jumbled") != NULL) ||
-           (strstr(output, "words") != NULL);
-}
+static int extractFirstFiveWordLine(const char *output, char lineOut[], size_t outSize) {
+    const char *cursor = output;
+    char line[512];
 
-static int hasGuessPrompt(const char *output) {
-    return (strstr(output, "Enter your guess") != NULL) ||
-           (strstr(output, "guess") != NULL);
-}
+    while (*cursor != '\0') {
+        size_t i = 0;
+        while (cursor[i] != '\0' && cursor[i] != '\n' && i < sizeof(line) - 1) {
+            line[i] = cursor[i];
+            i++;
+        }
+        line[i] = '\0';
 
-// ========== TEST CASE RUNNER ==========
+        if (countWords(line) == 5) {
+            strncpy(lineOut, line, outSize - 1);
+            lineOut[outSize - 1] = '\0';
+            while (strlen(lineOut) > 0 && isspace((unsigned char)lineOut[strlen(lineOut) - 1])) {
+                lineOut[strlen(lineOut) - 1] = '\0';
+            }
+            return 1;
+        }
 
-typedef struct {
-    int caseNumber;
-    bool passed;
-    bool hasOutput;
-    bool hasJumble;
-    bool hasPrompt;
-    bool hasCorrectGuess;
-    bool guessedSentenceHasFiveWords;
-    char guessedSentence[256];
-} TestResult;
-
-static TestResult runTestCase(int caseNumber) {
-    TestResult result;
-    result.caseNumber = caseNumber;
-    result.passed = false;
-    result.hasOutput = false;
-    result.hasJumble = false;
-    result.hasPrompt = false;
-    result.hasCorrectGuess = false;
-    result.guessedSentenceHasFiveWords = false;
-    strcpy(result.guessedSentence, "");
-
-    char output[4096] = "";
-    result.hasOutput = captureProgramOutput(output, sizeof(output));
-    if (!result.hasOutput) {
-        return result;
+        cursor += i;
+        if (*cursor == '\n') {
+            cursor++;
+        }
     }
 
-    result.hasJumble = hasJumbledOutput(output);
-    result.hasPrompt = hasGuessPrompt(output);
-    result.hasCorrectGuess = extractCorrectGuessSentence(output, result.guessedSentence,
-                                                         sizeof(result.guessedSentence));
-    if (result.hasCorrectGuess) {
-        result.guessedSentenceHasFiveWords = (countWords(result.guessedSentence) == 5);
+    return 0;
+}
+
+static int isPermutationAndReordered(const char *targetSentence, const char *scrambleLine) {
+    char targetWords[5][64] = {{0}};
+    char scrambleWords[5][64] = {{0}};
+
+    int tCount = splitWords(targetSentence, targetWords);
+    int sCount = splitWords(scrambleLine, scrambleWords);
+    if (tCount != 5 || sCount != 5) {
+        return 0;
     }
 
-    result.passed = result.hasJumble && result.hasPrompt && result.hasCorrectGuess &&
-                    result.guessedSentenceHasFiveWords;
-    return result;
+    bool used[5] = {false, false, false, false, false};
+    for (int i = 0; i < 5; i++) {
+        bool found = false;
+        for (int j = 0; j < 5; j++) {
+            if (!used[j] && local_strcmp(targetWords[i], scrambleWords[j]) == 0) {
+                used[j] = true;
+                found = true;
+                break;
+            }
+        }
+        if (!found) {
+            return 0;
+        }
+    }
+
+    int sameOrder = 1;
+    for (int i = 0; i < 5; i++) {
+        if (local_strcmp(targetWords[i], scrambleWords[i]) != 0) {
+            sameOrder = 0;
+            break;
+        }
+    }
+
+    return sameOrder ? 0 : 1;
+}
+
+static int containsIgnoreCase(const char *text, const char *needle) {
+    size_t nlen = strlen(needle);
+    if (nlen == 0) {
+        return 1;
+    }
+
+    for (size_t i = 0; text[i] != '\0'; i++) {
+        size_t j = 0;
+        while (needle[j] != '\0' && text[i + j] != '\0' &&
+               tolower((unsigned char)text[i + j]) == tolower((unsigned char)needle[j])) {
+            j++;
+        }
+        if (j == nlen) {
+            return 1;
+        }
+    }
+    return 0;
 }
 
 int main(void) {
-    printf("Running Jumbled Sentence Guessing Test Cases...\n");
-    printf("====================================================\n\n");
+    fprintf(stderr, "Running Jumbled Sentence Guessing Test Cases...\n");
+    fprintf(stderr, "====================================================\n\n");
 
-    int totalTests = 5;
+    int totalTests = 0;
     int passedTests = 0;
 
-    for (int i = 1; i <= totalTests; i++) {
-        TestResult result = runTestCase(i);
+    // --- Test Case 1: Program defines at least 4 unique 5-word sentences ---
+    totalTests++;
+    char uniqueTargets[16][256] = {{0}};
+    int uniqueCount = 0;
+    int allTargetsHaveFiveWords = 1;
 
-        if (result.passed) {
-            printf("Test Case %d: PASS\n", result.caseNumber);
-            printf("  Jumbled output shown: yes\n");
-            printf("  Guess prompt shown: yes\n");
-            printf("  Correct Guess found: yes\n");
-            printf("  Correct sentence: \"%s\"\n", result.guessedSentence);
-            printf("  Sentence has exactly 5 words: yes\n");
-            passedTests++;
-        } else {
-            printf("Test Case %d: FAIL\n", result.caseNumber);
-
-            if (!result.hasOutput) {
-                printf("  ERROR: Could not capture program output\n");
-            } else if (!result.hasJumble) {
-                printf("  ERROR: Missing jumbled words output section\n");
-            } else if (!result.hasPrompt) {
-                printf("  ERROR: Missing guess prompt\n");
-            } else if (!result.hasCorrectGuess) {
-                printf("  ERROR: Missing 'Correct Guess' output\n");
-            } else if (!result.guessedSentenceHasFiveWords) {
-                printf("  ERROR: Correct sentence is not exactly 5 words\n");
-                printf("  Parsed sentence: \"%s\"\n", result.guessedSentence);
-            }
+    for (time_t seed = 1; seed <= 120 && uniqueCount < 4; seed++) {
+        char output[4096] = "";
+        if (!runAndCapture(seed, "x\n", 1, output, sizeof(output))) {
+            continue;
         }
 
-        printf("----------------------------------------\n");
+        if (lastComparedTarget[0] == '\0') {
+            continue;
+        }
+
+        if (countWords(lastComparedTarget) != 5) {
+            allTargetsHaveFiveWords = 0;
+        }
+
+        bool seen = false;
+        for (int i = 0; i < uniqueCount; i++) {
+            if (local_strcmp(uniqueTargets[i], lastComparedTarget) == 0) {
+                seen = true;
+                break;
+            }
+        }
+        if (!seen && uniqueCount < 16) {
+            strncpy(uniqueTargets[uniqueCount], lastComparedTarget, sizeof(uniqueTargets[0]) - 1);
+            uniqueTargets[uniqueCount][sizeof(uniqueTargets[0]) - 1] = '\0';
+            uniqueCount++;
+        }
     }
 
-    printf("\nSummary: %d/%d test cases passed.\n", passedTests, totalTests);
-    printf("====================================================\n");
+    if (uniqueCount >= 4 && allTargetsHaveFiveWords) {
+        passedTests++;
+        fprintf(stderr, "Test Case %d: PASS\n", totalTests);
+        fprintf(stderr, "  Unique discovered sentences: %d\n", uniqueCount);
+        fprintf(stderr, "  Each discovered sentence has 5 words: yes\n");
+    } else {
+        fprintf(stderr, "Test Case %d: FAIL\n", totalTests);
+        fprintf(stderr, "  Unique discovered sentences: %d (expected at least 4)\n", uniqueCount);
+        fprintf(stderr, "  Each discovered sentence has 5 words: %s\n",
+                allTargetsHaveFiveWords ? "yes" : "no");
+    }
+    fprintf(stderr, "----------------------------------------\n");
 
+    // --- Test Case 2: Scrambled output remains 5 words and is a reordering ---
+    totalTests++;
+    time_t scrambleSeed = 77;
+    char outputScramble[4096] = "";
+    int scrambleCaptureOk = runAndCapture(scrambleSeed, "x\n", 1, outputScramble, sizeof(outputScramble));
+    char scrambleLine[512] = "";
+    int hasScrambleLine = scrambleCaptureOk && extractFirstFiveWordLine(outputScramble, scrambleLine, sizeof(scrambleLine));
+    int scrambleIsFiveWords = hasScrambleLine && countWords(scrambleLine) == 5;
+    int targetIsFiveWords = (lastComparedTarget[0] != '\0' && countWords(lastComparedTarget) == 5);
+    int isReorderedPermutation = hasScrambleLine && targetIsFiveWords &&
+                                 isPermutationAndReordered(lastComparedTarget, scrambleLine);
+
+    if (hasScrambleLine && scrambleIsFiveWords && isReorderedPermutation) {
+        passedTests++;
+        fprintf(stderr, "Test Case %d: PASS\n", totalTests);
+        fprintf(stderr, "  Sentence: %s\n", lastComparedTarget);
+        fprintf(stderr, "  Scrambled: %s\n", scrambleLine);
+        fprintf(stderr, "  Scrambled sentence has 5 words: yes\n");
+    } else {
+        fprintf(stderr, "Test Case %d: FAIL\n", totalTests);
+        if (!hasScrambleLine) {
+            fprintf(stderr, "  Could not find a 5-word scrambled line in output.\n");
+        } else {
+            fprintf(stderr, "  Sentence: %s\n", lastComparedTarget);
+            fprintf(stderr, "  Scrambled: %s\n", scrambleLine);
+            fprintf(stderr, "  Scrambled sentence has 5 words: %s\n", scrambleIsFiveWords ? "yes" : "no");
+            fprintf(stderr, "  Scramble is a true reordering: %s\n", isReorderedPermutation ? "yes" : "no");
+        }
+    }
+    fprintf(stderr, "----------------------------------------\n");
+
+    // --- Test Case 3: Program ends once the sentence is guessed ---
+    totalTests++;
+    time_t guessSeed = 88;
+    char discoverOutput[4096] = "";
+    int discovered = runAndCapture(guessSeed, "wrong\n", 1, discoverOutput, sizeof(discoverOutput)) &&
+                     lastComparedTarget[0] != '\0';
+
+    int guessEndsOnCorrect = 0;
+    if (discovered) {
+        char inputScript[1024];
+        snprintf(inputScript, sizeof(inputScript),
+                 "definitely wrong\n%s\nthis line should never be used\n", lastComparedTarget);
+
+        char guessOutput[4096] = "";
+        int ranGuess = runAndCapture(guessSeed, inputScript, 0, guessOutput, sizeof(guessOutput));
+        int hasSuccessMessage = containsIgnoreCase(guessOutput, "correct") ||
+                                containsIgnoreCase(guessOutput, "guessed");
+        guessEndsOnCorrect = ranGuess && strcmpCalls == 2 && hasSuccessMessage;
+    }
+
+    if (guessEndsOnCorrect) {
+        passedTests++;
+        fprintf(stderr, "Test Case %d: PASS\n", totalTests);
+        fprintf(stderr, "  Program stops after correct guess (strcmp calls: %d).\n", strcmpCalls);
+    } else {
+        fprintf(stderr, "Test Case %d: FAIL\n", totalTests);
+        fprintf(stderr, "  Program did not stop immediately after correct guess.\n");
+        fprintf(stderr, "  Observed strcmp calls: %d (expected 2).\n", strcmpCalls);
+    }
+    fprintf(stderr, "----------------------------------------\n");
+
+    fprintf(stderr, "\nSummary: %d/%d test cases passed.\n", passedTests, totalTests);
+    fprintf(stderr, "====================================================\n");
     return 0;
 }

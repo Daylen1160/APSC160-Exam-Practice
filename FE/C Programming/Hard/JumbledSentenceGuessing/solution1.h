@@ -1,7 +1,7 @@
 /**
- * @file solution.h
+ * @file solution1.h
  * @brief Jumbled Sentence Guessing Solution
- * @author Aly Khan Nuruddin & Daylen Chun
+ * @author Aly Khan Nuruddin and Daylen Chun
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -92,7 +92,7 @@ int main(void) {
 
         // Compare guess directly, no newline stripping needed
         if (strcmp(guess, original_sentence) == 0) {
-            printf("Correct Guess: \"%s\"\n", original_sentence);
+            printf("You guessed correctly: \"%s\"\n", original_sentence);
             break;
         } else {
             printf("Incorrect. Try again.\n\n");

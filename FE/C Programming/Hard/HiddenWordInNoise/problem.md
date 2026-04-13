@@ -43,4 +43,9 @@ fly
 You guessed the word correctly!
 ```
 
+## Hints:
+
+- Don't forget the null terminator when generating your sequence (the length of the sequence should be 30 characters + 1 for the null terminator).
+- Be careful with inserting a word in invalid indicies (you can't start inesrting a 4 letter word at index 28, for example)
+
 
