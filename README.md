@@ -128,7 +128,6 @@ Feel free to use Piazza to post questions related to solving the problems. Bonus
 Updates to the repository can be found at `CHANGELOG.md`. Be sure to check there every now and then so you know whether to refresh the repository or not. I'll announce a Piazza statement if it's important too.
 
 - Create MT1 Problems
-- Add more MT2 Problems for Medium and maybe Hard
-- Add personal solution to Aly's Hard Problems
+- Add more MT2 Problems for Easy & Medium
 - Add more user I/O Problems
 - Add comments to solutions (maybe?)
