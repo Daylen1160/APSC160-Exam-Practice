@@ -15,7 +15,7 @@
 #define START_LOWERCASE_CHARS 97
 
 const char wordList[][MAX_WORD_LENGTH] = {"tree", "cat", "fly", "book", "sun"};
-const char wordCount = sizeof(wordList) / sizeof(wordList[0]);
+const int wordCount = sizeof(wordList) / sizeof(wordList[0]);
 
 int main(void) {
     srand(time(NULL));
