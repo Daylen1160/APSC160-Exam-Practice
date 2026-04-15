@@ -110,14 +110,14 @@ In the `problem.md` file, there is a template to TinkerCAD. Complete the program
 
 | Name | Year | Major | Email | Currently TAing? |
 |:---:|:---:|:---:|:---:| :---:
-| Daylen Chun | 2nd | CPEN | dchun924@student.ubc.ca | ✅
-| Aly Khan Nuruddin | Graduated! 🥳 | BMEG| alykhan5@student.ubc.ca | ❌
+| Daylen Chun | 2nd, but Co-op till Sept 2027 | CPEN | dchun924@student.ubc.ca | ❌
+| Aly Khan Nuruddin | Graduated! 🥳 | BMEG | alykhan5@student.ubc.ca | ❌
 
 >Mind starring the repository if you enjoyed it? :)
 
 ## Inquiries
 
-If you find any mistakes/problems/suggestions in any directory or issues with the repository/git/getting things working, email dchun924@student.ubc.ca
+If you find any mistakes/problems/suggestions in any directory or issues with the repository/git/getting things working, email (TBD)
 
 Feel free to use Piazza to post questions related to solving the problems. Bonus points will be awarded to posting new, unique, innovative solutions to the problems.
 
@@ -128,6 +128,9 @@ Feel free to use Piazza to post questions related to solving the problems. Bonus
 Updates to the repository can be found at `CHANGELOG.md`. Be sure to check there every now and then so you know whether to refresh the repository or not. I'll announce a Piazza statement if it's important too.
 
 - Create MT1 Problems
+- Better autograder for string problems
+- Arduino debugging tips
+- Things to include in your cheatsheet md file
 - Add more MT2 Problems for Easy & Medium
 - Add more user I/O Problems
 - Add comments to solutions (maybe?)
